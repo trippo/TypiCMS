@@ -155,6 +155,7 @@ return array(
 		'Jenssegers\Rollbar\RollbarServiceProvider',
 		'Roumen\Sitemap\SitemapServiceProvider',
 		'Laracasts\Utilities\UtilitiesServiceProvider',
+		'AdamWathan\BootForms\BootFormsServiceProvider',
 
 		'TypiCMS\Providers\StartProvider',
 		'TypiCMS\Providers\UploadServiceProvider',
@@ -234,6 +235,7 @@ return array(
 		'Croppa'          => 'Bkwld\Croppa\Facade',
 		'Gravatar'        => 'Thomaswelton\LaravelGravatar\Facades\Gravatar',
 		'Breadcrumbs'     => 'DaveJamesMiller\Breadcrumbs\Facade',
+		'BootForm'        => 'AdamWathan\BootForms\Facades\BootForm',
 
 		'FileUpload'      => 'TypiCMS\Facades\FileUpload',
 		'TypiCMS'         => 'TypiCMS\Facades\TypiCMS',

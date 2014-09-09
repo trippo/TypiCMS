@@ -1,7 +1,7 @@
 @section('main')
 
-    {{ Form::open( array( 'route' => array('admin.pages.index'), 'method' => 'post', 'role' => 'form' ) ) }}
+    {{ BootForm::open()->action(route('admin.pages.index'))->multipart()->role('form') }}
         @include('pages.admin._form')
-    {{ Form::close() }}
+    {{ BootForm::close() }}
 
 @stop

@@ -1,7 +1,7 @@
 {
 	"name": "sdebacker/typicms",
 	"description": "Multilingual CMS build with Laravel 4.2",
-	"version": "1.4.11",
+	"version": "1.4.12",
 	"keywords": ["CMS", "multilingual", "Laravel", "Typi"],
 	"license": "MIT",
 	"authors": [
@@ -27,7 +27,8 @@
 		"cviebrock/image-validator": "1.0.*",
 		"jenssegers/rollbar": "1.*",
 		"roumen/sitemap": "2.4.*",
-		"laracasts/utilities": "1.*"
+		"laracasts/utilities": "1.*",
+		"adamwathan/bootforms": "0.3.*"
 	},
 	"require-dev": {
 		"way/generators": "2.*",

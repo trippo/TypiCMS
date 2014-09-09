@@ -4,8 +4,89 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "6601ed363aba0ddc2773e99a57fb723b",
+    "hash": "0ad96eca79cf24acec6ee5f9eea28073",
     "packages": [
+        {
+            "name": "adamwathan/bootforms",
+            "version": "v0.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/adamwathan/bootforms.git",
+                "reference": "39e18a32b7b2fb57d226aa7916077ff07690a6ad"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/adamwathan/bootforms/zipball/39e18a32b7b2fb57d226aa7916077ff07690a6ad",
+                "reference": "39e18a32b7b2fb57d226aa7916077ff07690a6ad",
+                "shasum": ""
+            },
+            "require": {
+                "adamwathan/form": "0.3.*",
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "dev-master@dev",
+                "phpunit/phpunit": "3.7.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "AdamWathan\\BootForms": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Adam Wathan",
+                    "email": "adam.wathan@gmail.com"
+                }
+            ],
+            "description": "Just a Formbuilder with some Bootstrap specific conveniences. Remembers old input, retrieves error messages and handles all your boilerplate Bootstrap markup automatically.",
+            "time": "2014-08-12 01:08:46"
+        },
+        {
+            "name": "adamwathan/form",
+            "version": "v0.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/adamwathan/form.git",
+                "reference": "4a0c9e464aa803c3911938fe4d6b939340d3771b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/adamwathan/form/zipball/4a0c9e464aa803c3911938fe4d6b939340d3771b",
+                "reference": "4a0c9e464aa803c3911938fe4d6b939340d3771b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "dev-master@dev",
+                "phpunit/phpunit": "3.7.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "AdamWathan\\Form": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Adam Wathan",
+                    "email": "adam.wathan@gmail.com"
+                }
+            ],
+            "description": "A basic framework agnostic form building package with a few extra niceties like remembering old input and retrieving error messages.",
+            "time": "2014-08-23 03:40:51"
+        },
         {
             "name": "aws/aws-sdk-php",
             "version": "2.4.12",
@@ -703,16 +784,16 @@
         },
         {
             "name": "guzzlehttp/guzzle",
-            "version": "4.2.1",
+            "version": "4.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "47ca212e985d962b3cbd67675eec54bb72d66062"
+                "reference": "9c4fbbf6457768f5036fbd88f1229f3fca812a5d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/47ca212e985d962b3cbd67675eec54bb72d66062",
-                "reference": "47ca212e985d962b3cbd67675eec54bb72d66062",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/9c4fbbf6457768f5036fbd88f1229f3fca812a5d",
+                "reference": "9c4fbbf6457768f5036fbd88f1229f3fca812a5d",
                 "shasum": ""
             },
             "require": {
@@ -764,7 +845,7 @@
                 "rest",
                 "web service"
             ],
-            "time": "2014-08-20 05:30:12"
+            "time": "2014-09-08 22:11:58"
         },
         {
             "name": "guzzlehttp/streams",
@@ -2764,16 +2845,16 @@
     "packages-dev": [
         {
             "name": "barryvdh/laravel-debugbar",
-            "version": "v1.7.3",
+            "version": "v1.7.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/barryvdh/laravel-debugbar.git",
-                "reference": "ab1afe09d35d59fb81d470e21c91a21b846e9c32"
+                "reference": "1559bfcb6e244802f9f3fa3c8ea9b21e5699cc5d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/barryvdh/laravel-debugbar/zipball/ab1afe09d35d59fb81d470e21c91a21b846e9c32",
-                "reference": "ab1afe09d35d59fb81d470e21c91a21b846e9c32",
+                "url": "https://api.github.com/repos/barryvdh/laravel-debugbar/zipball/1559bfcb6e244802f9f3fa3c8ea9b21e5699cc5d",
+                "reference": "1559bfcb6e244802f9f3fa3c8ea9b21e5699cc5d",
                 "shasum": ""
             },
             "require": {
@@ -2814,7 +2895,7 @@
                 "profiler",
                 "webprofiler"
             ],
-            "time": "2014-09-05 15:08:45"
+            "time": "2014-09-08 19:15:48"
         },
         {
             "name": "maximebf/debugbar",
