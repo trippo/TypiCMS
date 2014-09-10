@@ -13,7 +13,7 @@
 
 @include('admin._buttons-form')
 
-{{ Form::hidden('id'); }}
+{{ BootForm::hidden('id'); }}
 
 <ul class="nav nav-tabs">
     <li class="active">
@@ -45,7 +45,7 @@
 
                 <div class="row">
                     <div class="col-md-6">
-                        {{ BootForm::text(trans('labels.title'), $lang.'[title]', $model->translate($lang)->title, array('autofocus' => 'autofocus', 'class' => 'form-control')) }}
+                        {{ BootForm::text(trans('labels.title'), $lang.'[title]', $model->translate($lang)->title)->autofocus('autofocus') }}
                     </div>
                     <div class="col-md-6 form-group @if($errors->has($lang.'.slug'))has-error @endif">
                         {{ Form::label($lang.'[slug]', trans('validation.attributes.url'), array('class' => 'control-label')) }}
@@ -60,18 +60,9 @@
                     </div>
                 </div>
 
-                {{ Form::hidden($lang.'[uri]') }}
-
-                <div class="checkbox">
-                    <label>
-                        {{ Form::checkbox($lang.'[status]', 1, $model->translate($lang)->status) }} @lang('validation.attributes.online')
-                    </label>
-                </div>
-
-                <div class="form-group">
-                    {{ Form::label($lang.'[body]', trans('validation.attributes.body'), array('class' => 'sr-only')) }}
-                    {{ Form::textarea($lang.'[body]', $model->translate($lang)->body, array('class' => 'editor form-control')) }}
-                </div>
+                {{ BootForm::hidden($lang.'[uri]') }}
+                {{ BootForm::checkbox(trans('labels.online'), $lang.'[status]')->defaultCheckedState($model->translate($lang)->status) }}
+                {{ BootForm::textarea(trans('labels.body'), $lang.'[body]')->addClass('editor')->value($model->translate($lang)->body) }}
             
             </div>
             
@@ -100,20 +91,9 @@
 
         <div class="tab-pane fade in @if ($locale == $lang)active @endif" id="meta-{{ $lang }}">
 
-            <div class="form-group">
-                {{ Form::label($lang.'[meta_title]', trans('validation.attributes.meta_title')) }}
-                {{ Form::text($lang.'[meta_title]', $model->translate($lang)->meta_title, array('class' => 'form-control')) }}
-            </div>
-
-            <div class="form-group">
-                {{ Form::label($lang.'[meta_keywords]', trans('validation.attributes.meta_keywords')) }}
-                {{ Form::text($lang.'[meta_keywords]', $model->translate($lang)->meta_keywords, array('class' => 'form-control')) }}
-            </div>
-
-            <div class="form-group">
-                {{ Form::label($lang.'[meta_description]', trans('validation.attributes.meta_description')) }}
-                {{ Form::text($lang.'[meta_description]', $model->translate($lang)->meta_description, array('class' => 'form-control')) }}
-            </div>
+            {{ BootForm::text(trans('labels.meta_title'), $lang.'[meta_title]', $model->translate($lang)->meta_title) }}
+            {{ BootForm::text(trans('labels.meta_keywords'), $lang.'[meta_keywords]', $model->translate($lang)->meta_keywords) }}
+            {{ BootForm::text(trans('labels.meta_description'), $lang.'[meta_description]', $model->translate($lang)->meta_description) }}
 
         </div>
 
@@ -126,46 +106,12 @@
     {{-- Options --}}
     <div class="tab-pane fade in" id="tab-options">
 
-        <div class="checkbox">
-            <label>
-                {{ Form::checkbox('rss_enabled') }} @lang('validation.attributes.rss_enabled')
-            </label>
-        </div>
-
-        <div class="checkbox">
-            <label>
-                {{ Form::checkbox('comments_enabled') }} @lang('validation.attributes.comments_enabled')
-            </label>
-        </div>
-
-        <div class="checkbox">
-            @if ($model->is_home)
-                <label class="text-muted">
-                    {{ Form::checkbox('is_home', null, null, array('disabled', 'disabled')) }} @lang('validation.attributes.is_home')
-                    {{ Form::hidden('is_home') }}
-                </label>
-            @else
-                <label>
-                    {{ Form::checkbox('is_home') }} @lang('validation.attributes.is_home')
-                </label>
-            @endif
-        </div>
-
-        <div class="form-group @if($errors->has('template'))has-error @endif">
-            {{ Form::label('template', trans('validation.attributes.template'), array('class' => 'control-label')) }}
-            {{ Form::text('template', null, array('class' => 'form-control')) }}
-            {{ $errors->first('template', '<p class="help-block">:message</p>') }}
-        </div>
-
-        <div class="form-group">
-            {{ Form::label('css', trans('validation.attributes.css'), array('class' => 'control-label')) }}
-            {{ Form::textarea('css', null, array('class' => 'form-control')) }}
-        </div>
-
-        <div class="form-group">
-            {{ Form::label('js', trans('validation.attributes.js'), array('class' => 'control-label')) }}
-            {{ Form::textarea('js', null, array('class' => 'form-control')) }}
-        </div>
+        {{ BootForm::checkbox(trans('labels.rss_enabled'), 'rss_enabled') }}
+        {{ BootForm::checkbox(trans('labels.comments_enabled'), 'comments_enabled') }}
+        {{ BootForm::checkbox(trans('labels.is_home'), 'is_home') }}
+        {{ BootForm::text(trans('labels.template'), 'template') }}
+        {{ BootForm::textarea(trans('labels.css'), 'css') }}
+        {{ BootForm::textarea(trans('labels.js'), 'js') }}
 
     </div>
 
