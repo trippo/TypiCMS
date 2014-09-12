@@ -4,24 +4,24 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "0ad96eca79cf24acec6ee5f9eea28073",
+    "hash": "823a3ea92ffc56d0de0021dc6dca6242",
     "packages": [
         {
             "name": "adamwathan/bootforms",
-            "version": "v0.3.1",
+            "version": "v0.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/adamwathan/bootforms.git",
-                "reference": "39e18a32b7b2fb57d226aa7916077ff07690a6ad"
+                "reference": "9490c55a840195b5836d335f23670f2e9a485757"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/adamwathan/bootforms/zipball/39e18a32b7b2fb57d226aa7916077ff07690a6ad",
-                "reference": "39e18a32b7b2fb57d226aa7916077ff07690a6ad",
+                "url": "https://api.github.com/repos/adamwathan/bootforms/zipball/9490c55a840195b5836d335f23670f2e9a485757",
+                "reference": "9490c55a840195b5836d335f23670f2e9a485757",
                 "shasum": ""
             },
             "require": {
-                "adamwathan/form": "0.3.*",
+                "adamwathan/form": "dev-master",
                 "php": ">=5.3.0"
             },
             "require-dev": {
@@ -45,20 +45,20 @@
                 }
             ],
             "description": "Just a Formbuilder with some Bootstrap specific conveniences. Remembers old input, retrieves error messages and handles all your boilerplate Bootstrap markup automatically.",
-            "time": "2014-08-12 01:08:46"
+            "time": "2014-07-13 14:44:50"
         },
         {
             "name": "adamwathan/form",
-            "version": "v0.3.1",
+            "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/adamwathan/form.git",
-                "reference": "4a0c9e464aa803c3911938fe4d6b939340d3771b"
+                "url": "https://github.com/sdebacker/form.git",
+                "reference": "d8f27f20fc88aeb79191f9f6c4bb1ed86aff77c6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/adamwathan/form/zipball/4a0c9e464aa803c3911938fe4d6b939340d3771b",
-                "reference": "4a0c9e464aa803c3911938fe4d6b939340d3771b",
+                "url": "https://api.github.com/repos/sdebacker/form/zipball/d8f27f20fc88aeb79191f9f6c4bb1ed86aff77c6",
+                "reference": "d8f27f20fc88aeb79191f9f6c4bb1ed86aff77c6",
                 "shasum": ""
             },
             "require": {
@@ -74,7 +74,6 @@
                     "AdamWathan\\Form": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -85,7 +84,10 @@
                 }
             ],
             "description": "A basic framework agnostic form building package with a few extra niceties like remembering old input and retrieving error messages.",
-            "time": "2014-08-23 03:40:51"
+            "support": {
+                "source": "https://github.com/sdebacker/form/tree/master"
+            },
+            "time": "2014-09-12 09:09:40"
         },
         {
             "name": "aws/aws-sdk-php",
@@ -1741,16 +1743,16 @@
         },
         {
             "name": "rollbar/rollbar",
-            "version": "v0.9.8",
+            "version": "v0.9.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/rollbar/rollbar-php.git",
-                "reference": "62d266bee0c33ebc50f17ef33514801548e8acaa"
+                "reference": "31f2c59355ab1733e788f6927290b9ae15229836"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rollbar/rollbar-php/zipball/62d266bee0c33ebc50f17ef33514801548e8acaa",
-                "reference": "62d266bee0c33ebc50f17ef33514801548e8acaa",
+                "url": "https://api.github.com/repos/rollbar/rollbar-php/zipball/31f2c59355ab1733e788f6927290b9ae15229836",
+                "reference": "31f2c59355ab1733e788f6927290b9ae15229836",
                 "shasum": ""
             },
             "type": "library",
@@ -1779,7 +1781,7 @@
                 "logging",
                 "monitoring"
             ],
-            "time": "2014-08-28 22:11:04"
+            "time": "2014-09-11 19:19:11"
         },
         {
             "name": "roumen/sitemap",
@@ -2845,16 +2847,16 @@
     "packages-dev": [
         {
             "name": "barryvdh/laravel-debugbar",
-            "version": "v1.7.4",
+            "version": "v1.7.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/barryvdh/laravel-debugbar.git",
-                "reference": "1559bfcb6e244802f9f3fa3c8ea9b21e5699cc5d"
+                "reference": "69670c09da33ba73e6a38d1859f4f7c2ec1956b1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/barryvdh/laravel-debugbar/zipball/1559bfcb6e244802f9f3fa3c8ea9b21e5699cc5d",
-                "reference": "1559bfcb6e244802f9f3fa3c8ea9b21e5699cc5d",
+                "url": "https://api.github.com/repos/barryvdh/laravel-debugbar/zipball/69670c09da33ba73e6a38d1859f4f7c2ec1956b1",
+                "reference": "69670c09da33ba73e6a38d1859f4f7c2ec1956b1",
                 "shasum": ""
             },
             "require": {
@@ -2895,7 +2897,7 @@
                 "profiler",
                 "webprofiler"
             ],
-            "time": "2014-09-08 19:15:48"
+            "time": "2014-09-12 07:18:44"
         },
         {
             "name": "maximebf/debugbar",
@@ -3382,9 +3384,9 @@
 
     ],
     "minimum-stability": "stable",
-    "stability-flags": [
-
-    ],
+    "stability-flags": {
+        "adamwathan/form": 20
+    },
     "prefer-stable": false,
     "platform": [
 
