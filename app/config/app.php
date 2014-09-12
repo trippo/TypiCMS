@@ -155,8 +155,8 @@ return array(
 		'Jenssegers\Rollbar\RollbarServiceProvider',
 		'Roumen\Sitemap\SitemapServiceProvider',
 		'Laracasts\Utilities\UtilitiesServiceProvider',
-		'AdamWathan\BootForms\BootFormsServiceProvider',
 
+		'TypiCMS\Providers\BootFormsServiceProvider',
 		'TypiCMS\Providers\StartProvider',
 		'TypiCMS\Providers\UploadServiceProvider',
 		'TypiCMS\Providers\TypiCMSServiceProvider',

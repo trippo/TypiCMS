@@ -45,7 +45,7 @@
 
                 <div class="row">
                     <div class="col-md-6">
-                        {{ BootForm::text(trans('labels.title'), $lang.'[title]', $model->translate($lang)->title)->autofocus('autofocus') }}
+                        {{ BootForm::text(trans('labels.title'), $lang.'[title]')->autofocus('autofocus') }}
                     </div>
                     <div class="col-md-6 form-group @if($errors->has($lang.'.slug'))has-error @endif">
                         {{ Form::label($lang.'[slug]', trans('validation.attributes.url'), array('class' => 'control-label')) }}
@@ -61,8 +61,10 @@
                 </div>
 
                 {{ BootForm::hidden($lang.'[uri]') }}
-                {{ BootForm::checkbox(trans('labels.online'), $lang.'[status]')->defaultCheckedState($model->translate($lang)->status) }}
-                {{ BootForm::textarea(trans('labels.body'), $lang.'[body]')->addClass('editor')->value($model->translate($lang)->body) }}
+
+                {{ BootForm::checkbox(trans('labels.online'), $lang.'[status]') }}
+
+                {{ BootForm::textarea(trans('labels.body'), $lang.'[body]')->addClass('editor') }}
             
             </div>
             
@@ -91,9 +93,11 @@
 
         <div class="tab-pane fade in @if ($locale == $lang)active @endif" id="meta-{{ $lang }}">
 
-            {{ BootForm::text(trans('labels.meta_title'), $lang.'[meta_title]', $model->translate($lang)->meta_title) }}
-            {{ BootForm::text(trans('labels.meta_keywords'), $lang.'[meta_keywords]', $model->translate($lang)->meta_keywords) }}
-            {{ BootForm::text(trans('labels.meta_description'), $lang.'[meta_description]', $model->translate($lang)->meta_description) }}
+            {{ BootForm::text(trans('labels.meta_title'), $lang.'[meta_title]') }}
+
+            {{ BootForm::text(trans('labels.meta_keywords'), $lang.'[meta_keywords]') }}
+
+            {{ BootForm::text(trans('labels.meta_description'), $lang.'[meta_description]') }}
 
         </div>
 
@@ -107,10 +111,15 @@
     <div class="tab-pane fade in" id="tab-options">
 
         {{ BootForm::checkbox(trans('labels.rss_enabled'), 'rss_enabled') }}
+
         {{ BootForm::checkbox(trans('labels.comments_enabled'), 'comments_enabled') }}
+
         {{ BootForm::checkbox(trans('labels.is_home'), 'is_home') }}
+
         {{ BootForm::text(trans('labels.template'), 'template') }}
+
         {{ BootForm::textarea(trans('labels.css'), 'css') }}
+
         {{ BootForm::textarea(trans('labels.js'), 'js') }}
 
     </div>
