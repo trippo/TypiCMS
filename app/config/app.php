@@ -34,7 +34,7 @@ return array(
 	|
 	*/
 
-	'url' => 'http://lacademie.tv',
+	'url' => 'http://typicms.samsfactory.com',
 
 	/*
 	|--------------------------------------------------------------------------
