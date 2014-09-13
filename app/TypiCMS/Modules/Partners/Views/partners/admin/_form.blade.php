@@ -26,8 +26,7 @@
     <div class="tab-pane fade @if($locale == $lang)in active @endif" id="content-{{ $lang }}">
         <div class="row">
             <div class="col-md-6 form-group">
-                {{ Form::label($lang.'[title]', trans('validation.attributes.title')) }}
-                {{ Form::text($lang.'[title]', $model->translate($lang)->title, array('autofocus' => 'autofocus', 'class' => 'form-control')) }}
+                {{ BootForm::text(trans('labels.title'), $lang.'[title]')->autofocus('autofocus') }}
             </div>
             <div class="col-md-6 form-group @if($errors->has($lang.'.slug'))has-error @endif">
                 {{ Form::label($lang.'[slug]', trans('validation.attributes.slug'), array('class' => 'control-label')) }}
@@ -40,20 +39,13 @@
                 {{ $errors->first($lang.'.slug', '<p class="help-block">:message</p>') }}
             </div>
         </div>
-        <div class="checkbox">
-            <label>
-                {{ Form::checkbox($lang.'[status]', 1, $model->translate($lang)->status) }} @lang('validation.attributes.online')
-            </label>
-        </div>
+        {{ BootForm::checkbox(trans('labels.online'), $lang.'[status]') }}
         <div class="form-group @if($errors->has($lang.'.website'))has-error @endif">
             {{ Form::label($lang.'[website]', trans('validation.attributes.website'), array('class' => 'control-label')) }}
             {{ Form::text($lang.'[website]', $model->translate($lang)->website, array('class' => 'form-control', 'placeholder' => 'http://')) }}
             {{ $errors->first($lang.'.website', '<p class="help-block">:message</p>') }}
         </div>
-        <div class="form-group">
-            {{ Form::label($lang.'[body]', trans('validation.attributes.body')) }}
-            {{ Form::textarea($lang.'[body]', $model->translate($lang)->body, array('class' => 'editor form-control')) }}
-        </div>
+        {{ BootForm::textarea(trans('labels.body'), $lang.'[body]')->addClass('editor') }}
     </div>
 
 @endforeach

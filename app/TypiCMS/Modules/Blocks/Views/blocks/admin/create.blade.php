@@ -1,7 +1,7 @@
 @section('main')
 
-    {{ Form::open( array( 'files' => true, 'route' => array('admin.blocks.index'), 'method' => 'post', 'role' => 'form' ) ) }}
+    {{ BootForm::open()->action(route('admin.blocks.index'))->role('form') }}
         @include('blocks.admin._form')
-    {{ Form::close() }}
+    {{ BootForm::close() }}
 
 @stop

@@ -50,8 +50,7 @@
     <div class="tab-pane fade @if ($locale == $lang)in active @endif" id="{{ $lang }}">
         <div class="row">
             <div class="col-md-6 form-group">
-                {{ Form::label($lang.'[title]', trans('validation.attributes.title')) }}
-                {{ Form::text($lang.'[title]', $model->translate($lang)->title, array('autofocus' => 'autofocus', 'class' => 'form-control')) }}
+                {{ BootForm::text(trans('labels.title'), $lang.'[title]')->autofocus('autofocus') }}
             </div>
             <div class="col-md-6 form-group @if($errors->has($lang.'.slug'))has-error @endif">
                 {{ Form::label($lang.'[slug]', trans('validation.attributes.slug'), array('class' => 'control-label')) }}
@@ -64,19 +63,9 @@
                 {{ $errors->first($lang.'.slug', '<p class="help-block">:message</p>') }}
             </div>
         </div>
-        <div class="checkbox">
-            <label>
-                {{ Form::checkbox($lang.'[status]', 1, $model->translate($lang)->status) }} @lang('validation.attributes.online')
-            </label>
-        </div>
-        <div class="form-group">
-            {{ Form::label($lang.'[summary]', trans('validation.attributes.summary')) }}
-            {{ Form::textarea($lang.'[summary]', $model->translate($lang)->summary, array('class' => 'form-control', 'rows' => 4)) }}
-        </div>
-        <div class="form-group">
-            {{ Form::label($lang.'[body]', trans('validation.attributes.body')) }}
-            {{ Form::textarea($lang.'[body]', $model->translate($lang)->body, array('class' => 'editor form-control')) }}
-        </div>
+        {{ BootForm::checkbox(trans('labels.online'), $lang.'[status]') }}
+        {{ BootForm::textarea(trans('labels.summary'), $lang.'[summary]')->addClass('editor')->rows(4) }}
+        {{ BootForm::textarea(trans('labels.body'), $lang.'[body]')->addClass('editor') }}
     </div>
 
     @endforeach

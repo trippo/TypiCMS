@@ -28,8 +28,7 @@
 
             <div class="tab-pane fade @if ($locale == $lang)in active @endif" id="{{ $lang }}">
                 <div class="form-group">
-                    {{ Form::label($lang.'[title]', trans('validation.attributes.title')) }}
-                    {{ Form::text($lang.'[title]', $model->translate($lang)->title, array('autofocus' => 'autofocus', 'class' => 'form-control')) }}
+                        {{ BootForm::text(trans('labels.title'), $lang.'[title]')->autofocus('autofocus') }}
                 </div>
                 <div class="form-group">
                     {{ Form::label($lang.'[uri]', trans('validation.attributes.uri')) }}
@@ -43,11 +42,7 @@
                     {{ Form::text($lang.'[url]', $model->translate($lang)->url, array('class' => 'form-control', 'placeholder' => 'http://')) }}
                     {{ $errors->first($lang.'.url', '<p class="help-block">:message</p>') }}
                 </div>
-                <div class="checkbox">
-                    <label>
-                        {{ Form::checkbox($lang.'[status]', 1, $model->translate($lang)->status) }} @lang('validation.attributes.online')
-                    </label>
-                </div>
+                {{ BootForm::checkbox(trans('labels.online'), $lang.'[status]') }}
             </div>
 
             @endforeach

@@ -43,11 +43,7 @@
 
             <fieldset class="col-sm-6" id="{{ $lang }}">
                 <legend>{{ trans('global.languages.'.$lang) }}</legend>
-                <div class="checkbox">
-                    <label>
-                        {{ Form::checkbox($lang.'[status]', 1, $model->translate($lang)->status) }} @lang('validation.attributes.online')
-                    </label>
-                </div>
+                {{ BootForm::checkbox(trans('labels.online'), $lang.'[status]') }}
                 <div class="form-group">
                     {{ Form::label($lang.'[info]', trans('validation.attributes.info')) }}
                     {{ Form::textarea($lang.'[info]', $model->translate($lang)->info, array('class' => 'form-control', 'rows' => 5)) }}
