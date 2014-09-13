@@ -53,12 +53,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sdebacker/form.git",
-                "reference": "d8f27f20fc88aeb79191f9f6c4bb1ed86aff77c6"
+                "reference": "a8272b4ff5cbb8a6928fd38588812502a5079520"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sdebacker/form/zipball/d8f27f20fc88aeb79191f9f6c4bb1ed86aff77c6",
-                "reference": "d8f27f20fc88aeb79191f9f6c4bb1ed86aff77c6",
+                "url": "https://api.github.com/repos/sdebacker/form/zipball/a8272b4ff5cbb8a6928fd38588812502a5079520",
+                "reference": "a8272b4ff5cbb8a6928fd38588812502a5079520",
                 "shasum": ""
             },
             "require": {
@@ -87,7 +87,7 @@
             "support": {
                 "source": "https://github.com/sdebacker/form/tree/master"
             },
-            "time": "2014-09-12 09:09:40"
+            "time": "2014-09-13 11:29:36"
         },
         {
             "name": "aws/aws-sdk-php",
@@ -1558,16 +1558,16 @@
         },
         {
             "name": "phpseclib/phpseclib",
-            "version": "0.3.7",
+            "version": "0.3.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpseclib/phpseclib.git",
-                "reference": "8b8c62f278e363b75ddcacaf5803710232fbd3e4"
+                "reference": "5085202f1f37769aae59f9711c423f28159c9b29"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/8b8c62f278e363b75ddcacaf5803710232fbd3e4",
-                "reference": "8b8c62f278e363b75ddcacaf5803710232fbd3e4",
+                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/5085202f1f37769aae59f9711c423f28159c9b29",
+                "reference": "5085202f1f37769aae59f9711c423f28159c9b29",
                 "shasum": ""
             },
             "require": {
@@ -1576,6 +1576,7 @@
             "require-dev": {
                 "phing/phing": "2.7.*",
                 "phpunit/phpunit": "4.0.*",
+                "sami/sami": "1.*",
                 "squizlabs/php_codesniffer": "1.*"
             },
             "suggest": {
@@ -1651,7 +1652,7 @@
                 "x.509",
                 "x509"
             ],
-            "time": "2014-07-05 16:36:21"
+            "time": "2014-09-13 02:42:45"
         },
         {
             "name": "predis/predis",
@@ -2847,16 +2848,16 @@
     "packages-dev": [
         {
             "name": "barryvdh/laravel-debugbar",
-            "version": "v1.7.5",
+            "version": "v1.7.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/barryvdh/laravel-debugbar.git",
-                "reference": "69670c09da33ba73e6a38d1859f4f7c2ec1956b1"
+                "reference": "a6b5f3e93e7539473ff7940f87f2e3e0c6e097c2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/barryvdh/laravel-debugbar/zipball/69670c09da33ba73e6a38d1859f4f7c2ec1956b1",
-                "reference": "69670c09da33ba73e6a38d1859f4f7c2ec1956b1",
+                "url": "https://api.github.com/repos/barryvdh/laravel-debugbar/zipball/a6b5f3e93e7539473ff7940f87f2e3e0c6e097c2",
+                "reference": "a6b5f3e93e7539473ff7940f87f2e3e0c6e097c2",
                 "shasum": ""
             },
             "require": {
@@ -2897,7 +2898,7 @@
                 "profiler",
                 "webprofiler"
             ],
-            "time": "2014-09-12 07:18:44"
+            "time": "2014-09-12 13:48:09"
         },
         {
             "name": "maximebf/debugbar",
