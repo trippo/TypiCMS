@@ -17,7 +17,7 @@
 
 <div class="row">
 
-    {{ Form::hidden('id'); }}
+    {{ BootForm::hidden('id'); }}
 
     <div class="col-sm-6">
 

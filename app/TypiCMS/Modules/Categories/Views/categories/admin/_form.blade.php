@@ -12,7 +12,7 @@
 
 @include('admin._buttons-form')
 
-{{ Form::hidden('id'); }}
+{{ BootForm::hidden('id'); }}
 
 @include('admin._tabs-lang')
 

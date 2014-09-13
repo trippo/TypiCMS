@@ -8,8 +8,8 @@
 
 @include('admin._buttons-form')
 
-{{ Form::hidden('id'); }}
-{{ Form::hidden('group', 'db'); }}
+{{ BootForm::hidden('id'); }}
+{{ BootForm::hidden('group', 'db'); }}
 
 <div class="form-group @if($errors->has('key'))has-error @endif">
     {{ Form::label('key', trans('validation.attributes.key'), array('class' => 'control-label')) }}

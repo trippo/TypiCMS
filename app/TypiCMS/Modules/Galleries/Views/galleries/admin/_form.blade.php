@@ -13,7 +13,7 @@
 
 @include('admin._buttons-form')
 
-{{ Form::hidden('id'); }}
+{{ BootForm::hidden('id'); }}
 
 <div class="row">
 

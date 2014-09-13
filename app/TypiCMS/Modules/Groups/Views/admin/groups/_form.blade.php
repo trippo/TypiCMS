@@ -2,7 +2,7 @@
     {{ HTML::script('js/admin/checkboxes-permissions.js') }}
 @stop
 
-{{ Form::hidden('id') }}
+{{ BootForm::hidden('id'); }}
 
 @section('titleLeftButton')
     @include('admin._button-back', ['table' => $model->route])

@@ -13,7 +13,7 @@
 
 @include('admin._buttons-form')
 
-{{ Form::hidden('id'); }}
+{{ BootForm::hidden('id'); }}
 
 <div class="row">
     <div class="col-sm-4 form-group @if($errors->has('start_date'))has-error @endif">

@@ -9,7 +9,7 @@
 
 @include('admin._buttons-form')
 
-{{ Form::hidden('id'); }}
+{{ BootForm::hidden('id'); }}
 
 <div class="form-group @if($errors->has('name'))has-error @endif">
     {{ Form::label('name', trans('validation.attributes.name'), array('class' => 'control-label')) }}

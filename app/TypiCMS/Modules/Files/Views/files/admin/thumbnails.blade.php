@@ -18,11 +18,11 @@
 
         {{ Form::open(array('route' => 'admin.files.store', 'files' => true, 'class' => 'dropzone', 'id' => 'dropzone')) }}
 
-            {{ Form::hidden('gallery_id', Input::get('gallery_id', 0)) }}
+            {{ BootForm::hidden('gallery_id', Input::get('gallery_id', 0)) }}
             @foreach (Config::get('app.locales') as $locale)
-                {{ Form::hidden($locale.'[description]') }}
-                {{ Form::hidden($locale.'[alt_attribute]', '') }}
-                {{ Form::hidden($locale.'[keywords]') }}
+                {{ BootForm::hidden($locale.'[description]') }}
+                {{ BootForm::hidden($locale.'[alt_attribute]', '') }}
+                {{ BootForm::hidden($locale.'[keywords]') }}
             @endforeach
 
             <div class="dropzone-previews clearfix sortable sortable-thumbnails">
