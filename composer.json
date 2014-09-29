@@ -11,10 +11,6 @@
 			"role": "Developer"
 		}
 	],
-	"repositories": [{
-		"type": "vcs",
-		"url": "https://github.com/sdebacker/form"
-	}],
 	"require": {
 		"bkwld/croppa": "3.4.*",
 		"cartalyst/sentry": "2.*",
@@ -32,8 +28,7 @@
 		"jenssegers/rollbar": "1.*",
 		"roumen/sitemap": "2.4.*",
 		"laracasts/utilities": "1.*",
-		"adamwathan/bootforms": "0.3.*",
-		"adamwathan/form": "dev-master"
+		"adamwathan/bootforms": "0.4.*"
 	},
 	"require-dev": {
 		"way/generators": "2.*",
