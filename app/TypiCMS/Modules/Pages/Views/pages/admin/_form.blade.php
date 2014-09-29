@@ -7,9 +7,6 @@
     @include('admin._navbar-public-link')
 @stop
 
-@section('titleLeftButton')
-    @include('admin._button-back', ['table' => $model->route])
-@stop
 
 @include('admin._buttons-form')
 
@@ -20,7 +17,7 @@
         <a href="#tab-main" data-target="#tab-main" data-toggle="tab">@lang('global.Content')</a>
     </li>
     <li>
-        <a href="#tab-galleries" data-target="#tab-galleries" data-toggle="tab">@lang('global.Galleries')</a>
+        <a href="#tab-files" data-target="#tab-files" data-toggle="tab">@lang('global.Files')</a>
     </li>
     <li>
         <a href="#tab-meta" data-target="#tab-meta" data-toggle="tab">@lang('global.Meta')</a>
@@ -75,7 +72,9 @@
     </div>
 
     {{-- Galleries tab --}}
-    <div class="tab-pane fade in" id="tab-galleries">
+    <div class="tab-pane fade in" id="tab-files">
+
+        @include('admin._image-fieldset', ['field' => 'image'])
 
         @include('admin._galleries-fieldset')
 
@@ -109,10 +108,6 @@
 
     {{-- Options --}}
     <div class="tab-pane fade in" id="tab-options">
-
-        {{ BootForm::checkbox(trans('labels.rss_enabled'), 'rss_enabled') }}
-
-        {{ BootForm::checkbox(trans('labels.comments_enabled'), 'comments_enabled') }}
 
         {{ BootForm::checkbox(trans('labels.is_home'), 'is_home') }}
 
