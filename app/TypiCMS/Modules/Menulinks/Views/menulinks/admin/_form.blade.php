@@ -17,6 +17,9 @@
 <div class="row">
 
     {{ BootForm::hidden('id'); }}
+    {{ BootForm::hidden('menu_id', $menu->id); }}
+    {{ BootForm::hidden('position', $model->position ?: 0); }}
+    {{ BootForm::hidden('parent_id'); }}
 
     <div class="col-sm-6">
 
@@ -28,7 +31,7 @@
 
             <div class="tab-pane fade @if ($locale == $lang)in active @endif" id="{{ $lang }}">
                 <div class="form-group">
-                        {{ BootForm::text(trans('labels.title'), $lang.'[title]')->autofocus('autofocus') }}
+                    {{ BootForm::text(trans('labels.title'), $lang.'[title]') }}
                 </div>
                 <div class="form-group">
                     {{ Form::label($lang.'[uri]', trans('validation.attributes.uri')) }}
@@ -87,8 +90,3 @@
     </div>
 
 </div>
-
-{{ BootForm::hidden('menu_id', $menu->id); }}
-{{ BootForm::hidden('position', $model->position ?: 0); }}
-{{ BootForm::hidden('parent', $model->parent ?: 0); }}
-{{ BootForm::hidden('id'); }}

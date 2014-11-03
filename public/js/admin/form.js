@@ -107,25 +107,23 @@ function initTinymce(selector) {
          * Selectize for tags
          */
         if ($('#tags').length) {
-            $.getJSON("/admin/tags", function(data){
-                var items = data.map(function(x) { return { item: x }; });
-                $('#tags').selectize({
-                    persist: false,
-                    create: true,
-                    delimiter: ', ',
-                    options: items,
-                    labelField: 'item',
-                    valueField: 'item',
-                    createOnBlur: true
-                });
-            })
+            var tags = TypiCMS.tags.map(function(x) { return { item: x }; });
+            $('#tags').selectize({
+                persist: false,
+                create: true,
+                delimiter: ', ',
+                options: tags,
+                searchField: ['item'],
+                labelField: 'item',
+                valueField: 'item',
+                createOnBlur: true
+            });
         }
 
         /**
          * Selectize for galleries
          */
         $('select#galleries').selectize({
-            plugins: ['drag_drop'],
             createOnBlur: true
         });
 

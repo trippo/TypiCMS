@@ -60,5 +60,5 @@ return array(
 
     'Toggle navigation' => 'Toggle navigation',
 
-    'Drag and drop to sort' => 'Drag and drop to sort',
+    'Items sorted' => 'Items sorted.',
 );

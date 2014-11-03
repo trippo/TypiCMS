@@ -28,7 +28,7 @@
 
         <div class="form-group @if($errors->has('name'))has-error @endif">
             {{ Form::label('name', trans('validation.attributes.name'), array('class' => 'control-label')) }}
-            {{ Form::text('name', null, array('autofocus', 'class' => 'form-control')) }}
+            {{ Form::text('name', null, array('class' => 'form-control')) }}
             {{ $errors->first('name', '<p class="help-block">:message</p>') }}
         </div>
 
@@ -67,7 +67,7 @@
     <div class="tab-pane fade in @if (input::get('tab') == 'tab-files')active @endif" id="tab-files">
 
         @if ($model->id)
-            @include('files.admin.index')
+            @include('galleries.admin.files')
         @else
             <p class="alert alert-info">@lang('galleries::global.Save your gallery, then add files.')</p>
         @endif

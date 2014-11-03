@@ -3,11 +3,15 @@ namespace TypiCMS\Modules\Translations\Models;
 
 use Dimsav\Translatable\Translatable;
 use TypiCMS\Models\Base;
+use TypiCMS\Presenters\PresentableTrait;
 
 class Translation extends Base
 {
 
     use Translatable;
+    use PresentableTrait;
+
+    protected $presenter = 'TypiCMS\Modules\Translations\Presenters\ModulePresenter';
 
     protected $fillable = array(
         'group',
@@ -25,6 +29,8 @@ class Translation extends Base
         'translation'
     );
 
+    protected $appends = ['translation'];
+
     /**
      * The default route for admin side.
      *
@@ -37,4 +43,14 @@ class Translation extends Base
      */
     public $order = 'key';
     public $direction = 'asc';
+
+    /**
+     * Get translation attribute from translation table
+     *
+     * @return string
+     */
+    public function getTranslationAttribute($value)
+    {
+        return $this->translation;
+    }
 }

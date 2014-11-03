@@ -22,7 +22,7 @@
     <div class="tab-pane fade @if ($locale == $lang)in active @endif" id="{{ $lang }}">
         <div class="row">
             <div class="col-md-6 form-group">
-                {{ BootForm::text(trans('labels.title'), $lang.'[title]')->autofocus('autofocus') }}
+                {{ BootForm::text(trans('labels.title'), $lang.'[title]') }}
             </div>
             <div class="col-md-6 form-group @if($errors->has($lang.'.slug'))has-error @endif">
                 {{ Form::label($lang.'[slug]', trans('validation.attributes.slug')) }}

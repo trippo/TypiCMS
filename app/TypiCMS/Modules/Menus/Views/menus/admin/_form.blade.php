@@ -1,44 +1,19 @@
-@section('js')
-    {{ HTML::script(asset('js/admin/list.js')) }}
-@stop
-
 @include('admin._buttons-form')
 
 {{ BootForm::hidden('id'); }}
 
 <div class="row">
 
+    @if ($model->id)
     <div class="col-sm-6">
-
-        <div class="list-form" lang="{{ Config::get('app.locale') }}">
-
-            @include('admin._buttons-list')
-
-            <a href="{{ route('admin.menus.menulinks.create', $model->id) }}">
-                <i class="fa fa-fw fa-plus-circle"></i>Add menu link
-            </a>
-
-            <ul class="list-main nested sortable" data-url="/admin/menus/{{ $model->id }}/menulinks">
-            @foreach ($model->menulinks->nest() as $menulink)
-                @include('menulinks.admin._listItem', array('model' => $menulink))
-            @endforeach
-            </ul>
-
-        </div>
-
+        <a href="{{ route('admin.menus.menulinks.create', $model->id) }}">
+            <i class="fa fa-fw fa-plus-circle"></i>Add menu link
+        </a>
+        @include('menus.admin.menulinks')
     </div>
-
+    @endif
 
     <div class="col-sm-6">
-
-<<<<<<< HEAD
-        <div class="form-group @if($errors->has('class'))has-error @endif">
-        {{ Form::label('side', trans('validation.attributes.side'), array('class' => 'control-label')) }}
-        {{ Form::select('side', ['Front office' => trans('validation.attributes.Front office'), 'Back office' => trans('validation.attributes.Back office')], null, array('class' => 'form-control')) }}
-        </div>
-=======
-        {{ Form::hidden('id'); }}
->>>>>>> master
 
         <div class="form-group @if($errors->has('name'))has-error @endif">
             {{ Form::label('name', trans('validation.attributes.name'), array('class' => 'control-label')) }}
@@ -61,7 +36,7 @@
             <div class="tab-pane fade @if ($locale == $lang)in active @endif" id="{{ $lang }}">
                 <div class="form-group">
                     {{ Form::label($lang.'[title]', trans('validation.attributes.title')) }}
-                    {{ BootForm::text(trans('labels.title'), $lang.'[title]')->autofocus('autofocus') }}
+                    {{ BootForm::text(trans('labels.title'), $lang.'[title]') }}
                 </div>
                 {{ BootForm::checkbox(trans('labels.online'), $lang.'[status]') }}
             </div>

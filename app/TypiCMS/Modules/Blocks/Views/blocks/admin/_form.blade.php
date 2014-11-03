@@ -8,7 +8,7 @@
 
 {{ BootForm::hidden('id'); }}
 
-{{ BootForm::text(trans('labels.name'), 'name')->autofocus('autofocus') }}
+{{ BootForm::text(trans('labels.name'), 'name') }}
 
 @include('admin._tabs-lang-form', ['target' => 'content'])
 

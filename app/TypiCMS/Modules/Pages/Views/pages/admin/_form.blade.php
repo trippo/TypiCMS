@@ -10,7 +10,9 @@
 
 @include('admin._buttons-form')
 
-{{ BootForm::hidden('id'); }}
+{{ BootForm::hidden('id') }}
+{{ BootForm::hidden('position', $model->position ? : 0) }}
+{{ BootForm::hidden('parent_id') }}
 
 <ul class="nav nav-tabs">
     <li class="active">
@@ -41,8 +43,9 @@
             <div class="tab-pane fade in @if ($locale == $lang)active @endif" id="content-{{ $lang }}">
 
                 <div class="row">
+
                     <div class="col-md-6">
-                        {{ BootForm::text(trans('labels.title'), $lang.'[title]')->autofocus('autofocus') }}
+                        {{ BootForm::text(trans('labels.title'), $lang.'[title]') }}
                     </div>
                     <div class="col-md-6 form-group @if($errors->has($lang.'.slug'))has-error @endif">
                         {{ Form::label($lang.'[slug]', trans('validation.attributes.url'), array('class' => 'control-label')) }}

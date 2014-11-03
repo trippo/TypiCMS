@@ -1,12 +1,17 @@
 # Changelog
 All notable changes to TypiCMS will be documented in this file.
 
-## 1.5.7 - 2014
+## 1.6.0 - 2014-11-02
 
 ### Changed
-- flexslider replaced by swiper
+- Twitter Bootstrap 3.3.
+- Angular 1.3.
+- Flexslider replaced by Swiper
+- Pages : parent column changed to parent_id
+- Menulinks : parent column changed to parent_id
 
 ### Fixed
+- Selectize for Tags
 - Dryier template code for galleries
 
 ## 1.5.6 - 2014-10-16
