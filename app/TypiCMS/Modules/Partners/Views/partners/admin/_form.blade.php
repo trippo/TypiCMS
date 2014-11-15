@@ -26,11 +26,7 @@
 
 <div class="row">
     <div class="col-sm-2 form-group @if($errors->has('position'))has-error @endif">
-        {{ Form::label('position', trans('validation.attributes.position')) }}
-        {{ Form::text('position', null, array('class' => 'form-control')) }}
-        @if($errors->has('position'))
-        <span class="help-block">{{ $errors->first('position') }}</span>
-        @endif
+        {{ BootForm::text(trans('labels.position'), 'position') }}
     </div>
 </div>
 
