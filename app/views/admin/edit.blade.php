@@ -7,7 +7,7 @@
 
     {{ BootForm::open()->put()->action(route('admin.' . $model->getTable() . '.update', $model->id))->multipart()->role('form') }}
     {{ BootForm::bind($model) }}
-        @include($module . '.admin._form')
+        @include($model->getTable() . '.admin._form')
     {{ BootForm::close() }}
 
 @stop

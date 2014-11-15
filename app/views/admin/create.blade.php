@@ -6,7 +6,7 @@
     </h1>
 
     {{ BootForm::open()->action(route('admin.' . $model->getTable() . '.index'))->multipart()->role('form') }}
-        @include($module . '.admin._form')
+        @include($model->getTable() . '.admin._form')
     {{ BootForm::close() }}
 
 @stop
