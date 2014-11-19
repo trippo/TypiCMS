@@ -15,7 +15,6 @@
         "bkwld/croppa": "~3.4.2",
         "cartalyst/sentry": "~2.1.4",
         "davejamesmiller/laravel-breadcrumbs": "~2.2.3",
-        "dimsav/laravel-translatable": "~4.3",
         "edvinaskrucas/notification": "~3.0",
         "eluceo/ical": "~0.3",
         "guzzlehttp/guzzle": "~4.2.3",
@@ -28,8 +27,8 @@
         "jenssegers/rollbar": "~1.3",
         "roumen/sitemap": "~2.4.6",
         "laracasts/utilities": "~1.0",
-        "adamwathan/bootforms": "~0.4.1",
-        "vlucas/phpdotenv": "~1.0"
+        "vlucas/phpdotenv": "~1.0",
+        "typicms/translatablebootforms": "~1.0.0"
     },
     "require-dev": {
         "way/generators": "~3.0",
