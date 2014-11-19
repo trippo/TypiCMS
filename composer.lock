@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "e37e7ff9b4cbebc6f2d0324036dcb15a",
+    "hash": "8716b67ed4248d7e65e9b4faec916a14",
     "packages": [
         {
             "name": "adamwathan/bootforms",
@@ -2809,6 +2809,52 @@
                 "laravel4"
             ],
             "time": "2014-07-21 16:35:56"
+        },
+        {
+            "name": "typicms/translatablebootforms",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/TypiCMS/TranslatableBootForms.git",
+                "reference": "ba9ea7ac33b0b2827c4ea8f3dae4d8838c3d0546"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/TypiCMS/TranslatableBootForms/zipball/ba9ea7ac33b0b2827c4ea8f3dae4d8838c3d0546",
+                "reference": "ba9ea7ac33b0b2827c4ea8f3dae4d8838c3d0546",
+                "shasum": ""
+            },
+            "require": {
+                "adamwathan/bootforms": "~0.4.1",
+                "dimsav/laravel-translatable": "~4.3",
+                "illuminate/support": "4.2.*",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "TypiCMS\\TranslatableBootForms\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Samuel De Backer",
+                    "email": "sdebacker@gmail.com"
+                }
+            ],
+            "description": "Form model binding for translated fields, use BootForms and Translatable.",
+            "keywords": [
+                "BootForm",
+                "TypiCMS",
+                "formbuilder",
+                "laravel",
+                "translatable"
+            ],
+            "time": "2014-11-19 23:27:29"
         },
         {
             "name": "vlucas/phpdotenv",
