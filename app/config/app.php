@@ -153,7 +153,7 @@ return array(
 		'Roumen\Sitemap\SitemapServiceProvider',
 		'Laracasts\Utilities\UtilitiesServiceProvider',
 
-		'TypiCMS\Providers\BootFormsServiceProvider',
+		'TypiCMS\TranslatableBootForms\TranslatableBootFormsServiceProvider',
 		'TypiCMS\Providers\StartProvider',
 		'TypiCMS\Providers\UploadServiceProvider',
 		'TypiCMS\Providers\TypiCMSServiceProvider',
