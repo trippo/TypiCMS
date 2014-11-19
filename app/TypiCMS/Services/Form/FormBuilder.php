@@ -26,7 +26,8 @@ class FormBuilder extends OriginalFormBuilder
     }
 
     /**
-     * Getting value from model or translation table to populate forms
+     * Getting value from Model or ModelTranslation to populate form
+     * 
      * @param  string $name key
      * @return string       value
      */
