@@ -57,7 +57,7 @@ App::error(function(Exception $exception, $code)
 	{
 		case 403:
 			return Response::view(
-				'errors.403', [
+				'core::errors.403', [
 					'title' => 'Erreur 403 – ' . Config::get('typicms.' . App::getLocale() . '.websiteTitle'),
 					'lang' => App::getLocale(),
 					'bodyClass' => 'error-403'
@@ -66,7 +66,7 @@ App::error(function(Exception $exception, $code)
 
 		case 404:
 			return Response::view(
-				'errors.404', [
+				'core::errors.404', [
 					'title' => 'Erreur 404 – ' . Config::get('typicms.' . App::getLocale() . '.websiteTitle'),
 					'lang' => App::getLocale(),
 					'bodyClass' => 'error-404'
@@ -74,7 +74,7 @@ App::error(function(Exception $exception, $code)
 			);
 	}
 	// return Response::view(
-	// 	'errors.500', [
+	// 	'core::errors.500', [
 	// 		'title' => 'Erreur 500 – ' . Config::get('typicms.' . App::getLocale() . '.websiteTitle'), 
 	// 		'lang' => App::getLocale(),
 	// 		'bodyClass' => 'error-500'
