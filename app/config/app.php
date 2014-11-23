@@ -153,10 +153,17 @@ return array(
 		'Roumen\Sitemap\SitemapServiceProvider',
 		'Laracasts\Utilities\UtilitiesServiceProvider',
 
+		'TypiCMS\Modules\News\Providers\ModuleProvider',
+		'TypiCMS\Modules\Places\Providers\ModuleProvider',
+		'TypiCMS\Modules\Events\Providers\ModuleProvider',
+		'TypiCMS\Modules\Projects\Providers\ModuleProvider',
+		'TypiCMS\Modules\Categories\Providers\ModuleProvider',
+		'TypiCMS\Modules\Tags\Providers\ModuleProvider',
+		'TypiCMS\Modules\Partners\Providers\ModuleProvider',
+		'TypiCMS\Modules\Contacts\Providers\ModuleProvider',
+
+		'TypiCMS\Providers\CoreServiceProvider',
 		'TypiCMS\TranslatableBootForms\TranslatableBootFormsServiceProvider',
-		'TypiCMS\Providers\StartProvider',
-		'TypiCMS\Providers\UploadServiceProvider',
-		'TypiCMS\Providers\TypiCMSServiceProvider',
 
 	),
 
