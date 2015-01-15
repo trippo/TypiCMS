@@ -12,7 +12,7 @@ function initTinymce(selector) {
         relative_urls: false,
         skin_url: '/components/tinymce/skins/typicms',
         file_browser_callback: function(field_name, url, type, win) {
-            // Help : http://www.tinymce.com/forum/viewtopic.php?id=30861&p=2
+        	// Help : http://www.tinymce.com/forum/viewtopic.php?id=30861&p=2
             tinymce.activeEditor.windowManager.open({
                 title: 'Choose image',
                 url: '/admin/files?type=i&view=filepicker',
@@ -20,17 +20,15 @@ function initTinymce(selector) {
                 height: 550
             }, {
                 oninsert: function(url) {
-                    fieldElm = win.document.getElementById(field_name);
+                	fieldElm = win.document.getElementById(field_name);
                     fieldElm.value = url;
-                    // Bellow code doesn't work anymore with TinyMCE 4.1.7
-                    // so width and height fields are no more automatically set
-                    // if ("createEvent" in document) {
-                    //     var evt = document.createEvent("HTMLEvents");
-                    //     evt.initEvent("change", false, true);
-                    //     fieldElm.dispatchEvent(evt);
-                    // } else {
-                    //     fieldElm.fireEvent("onchange");
-                    // }
+                    if ("createEvent" in document) {
+                        var evt = document.createEvent("HTMLEvents");
+                        evt.initEvent("change", false, true);
+                        fieldElm.dispatchEvent(evt);
+                    } else {
+                        fieldElm.fireEvent("onchange");
+                    }
                 }
             });
         },
@@ -78,7 +76,7 @@ function initTinymce(selector) {
                 key = $(this).data('key'),
                 data = {};
 
-            if (! confirm('Delete ' + key + '?')) {
+            if (! confirm('Cancel ' + key + '?')) {
                 return false;
             }
 
@@ -93,7 +91,8 @@ function initTinymce(selector) {
             }).done(function() {
                 location.reload();
             }).fail(function () {
-                alertify.error(translate('An error occurred while deleting attachment.'));
+                location.reload();
+//                alertify.error(translate('An error occurred while deleting attachment.'));
             });
             return false;
         });
@@ -161,10 +160,10 @@ function initTinymce(selector) {
          */
         if ($('.datepicker').length) {
             $('.datepicker').pickadate({
-                // editable: true,
                 formatSubmit: 'yyyy-mm-dd',
-                format: 'dd.mm.yyyy',
+                format: 'dd/mm/yyyy',
                 hiddenName: true,
+                editable: true,
             });
         }
 
