@@ -54,7 +54,7 @@ class Category extends Base
     
     public function children()
     {
-        return $this->hasMany('Category','parent_id');
+        return $this->hasMany('TypiCMS\Modules\Categories\Models\Category','parent_id');
     }
 
 	/**
@@ -62,7 +62,7 @@ class Category extends Base
      */
     public function parent()
     {
-        return $this->belongsTo('Category','parent_id')->whereNotNull('parent_id');;
+        return $this->belongsTo('TypiCMS\Modules\Categories\Models\Category','parent_id')->whereNotNull('parent_id');
     }
 	
     /**
