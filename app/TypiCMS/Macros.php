@@ -44,14 +44,15 @@ HTML::macro('langButton', function ($locale = null, $attributes = []) {
     $inputs = Input::except('locale');
     $inputs['locale'] = $locale;
 
-    $attributes['class'] = 'btn btn-default btn-xs';
+    //$attributes['class'] = 'btn btn-default btn-sm';
+    $li_attributes=array('class'=>'');
     if ($locale == Config::get('app.locale')) {
-        $attributes['class'] .= ' active';
+        $li_attributes['class'] .= ' active';
     }
     $label = trans('global.languages.' . $locale);
     $attributes['href'] = '?' . http_build_query($inputs);
-
-    return '<a ' . HTML::attributes($attributes) . '>' . $label . '</a>';
+    return '<li'. HTML::attributes($li_attributes).'><a '. HTML::attributes($attributes).'><img width="20" src="/img/languages/'.$locale.'.png" alt="'.$locale.'"/> ' . $label . '</a></li>';
+    //return '<button type="button" ' . HTML::attributes($attributes) . '><img width="20" src="/img/languages/'.$locale.'.png" alt="'.$locale.'"/> ' . $label . '</button>';
 
 });
 

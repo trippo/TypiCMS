@@ -230,7 +230,7 @@ abstract class Base extends Model
      */
     public function getThumbAttribute()
     {
-        return $this->present()->thumbSrc(null, 22);
+        return $this->present()->thumbSrc(null, 40);
     }
 
     /**

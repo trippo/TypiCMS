@@ -44,7 +44,7 @@
 
         @include('admin._tabs-lang-form', ['target' => 'content'])
 
-        <div class="tab-content">
+        <div class="tab-content tab-lang">
 
         @foreach ($locales as $lang)
 

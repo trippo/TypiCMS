@@ -39,13 +39,13 @@ class FileUpload
         $input['type'] = $fileTypes[strtolower($file->getClientOriginalExtension())];
 
         $filecounter = 1;
-        while (file_exists($input['path'] . '/' . $input['filename'])) {
+        while (file_exists('public/' . $input['path'] . '/' . $input['filename'])) {
             $input['filename'] = $fileName . '_' . $filecounter ++ . $input['extension'];
         }
 
         try {
-            $file->move($input['path'], $input['filename']);
-            list($input['width'], $input['height']) = getimagesize($input['path'] . '/' . $input['filename']);
+            $file->move('public/' . $input['path'], $input['filename']);
+            list($input['width'], $input['height']) = getimagesize('public/' . $input['path'] . '/' . $input['filename']);
 
             return $input;
         } catch (FileException $e) {

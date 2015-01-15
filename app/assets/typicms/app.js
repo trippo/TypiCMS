@@ -6,7 +6,7 @@
     /*globals $, jQuery, angular*/
 
     var lang = $('html').attr('lang');
-
+    
     angular.module('typicms', ['ngResource', 'smart-table', 'gettext', 'ui.tree'], function ($locationProvider) {
         // $locationProvider.html5Mode(true);
     });

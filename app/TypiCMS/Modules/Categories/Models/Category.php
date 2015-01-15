@@ -19,9 +19,13 @@ class Category extends Base
 
     protected $fillable = array(
         'position',
+        'parent_id',
+        'image',
         // Translatable columns
         'title',
         'slug',
+        'excerpt',
+        'description',
         'status',
     );
 
@@ -33,9 +37,34 @@ class Category extends Base
     public $translatedAttributes = array(
         'title',
         'slug',
+        'excerpt',
+        'description',
         'status',
     );
+    
+    
+    /**
+     * Columns that are file.
+     *
+     * @var array
+     */
+    public $attachments = array(
+        'image',
+    );
+    
+    public function children()
+    {
+        return $this->hasMany('Category','parent_id');
+    }
 
+	/**
+     * get the parent model
+     */
+    public function parent()
+    {
+        return $this->belongsTo('Category','parent_id')->whereNotNull('parent_id');;
+    }
+	
     /**
      * Get public uri
      *

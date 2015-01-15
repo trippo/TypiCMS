@@ -1,4 +1,5 @@
 @section('js')
+    {{ HTML::script(asset('//tinymce.cachefly.net/4.1/tinymce.min.js')) }}
     {{ HTML::script(asset('js/admin/form.js')) }}
 @stop
 
@@ -13,9 +14,17 @@
 
 @include('admin._image-fieldset', ['field' => 'image'])
 
+<div class="row">
+    <div class="col-sm-4 form-group">
+        {{ Form::label('parent_id', trans('categories::global.parent_category'), array('class' => 'control-label')) }}        
+        {{ Form::select('parent_id', $selectCategories, $model->parent_id, array('class' => 'form-control')) }}
+        
+    </div>
+</div>
+
 @include('admin._tabs-lang')
 
-<div class="tab-content">
+<div class="tab-content tab-lang">
 
     @foreach ($locales as $lang)
 
@@ -41,6 +50,19 @@
                 {{ Form::checkbox($lang.'[status]', 1, $model->translate($lang)->status) }} @lang('validation.attributes.online')
             </label>
         </div>
+		<div class="row">
+            <div class="col-sm-12 form-group">
+                {{ Form::label($lang.'[excerpt]', trans('validation.attributes.excerpt')) }}
+                {{ Form::text($lang.'[excerpt]', $model->translate($lang)->excerpt, array('class' => 'form-control')) }}
+            </div>
+		</div>
+		
+		<div class="row">
+            <div class="col-sm-12 form-group">
+                {{ Form::label($lang.'[description]', trans('validation.attributes.description')) }}
+                {{ Form::textarea($lang.'[description]', $model->translate($lang)->description, array('class' => 'editor form-control')) }}
+            </div>
+		</div>
     </div>
 
     @endforeach

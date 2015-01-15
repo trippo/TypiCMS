@@ -14,7 +14,7 @@
 
         @include('admin._tabs-lang')
 
-        <div class="tab-content">
+        <div class="tab-content tab-lang">
 
             @foreach ($locales as $lang)
 

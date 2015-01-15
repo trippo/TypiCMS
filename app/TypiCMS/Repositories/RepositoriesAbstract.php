@@ -10,6 +10,7 @@ use Input;
 use stdClass;
 use Str;
 use TypiCMS\Modules\Pages\Models\Page;
+use TypiCMS\Modules\Categories\Models\Category;
 use TypiCMS\NestedCollection;
 
 abstract class RepositoriesAbstract implements RepositoryInterface
@@ -288,17 +289,21 @@ abstract class RepositoriesAbstract implements RepositoryInterface
      */
     public function update(array $data)
     {
-        $model = $this->model->find($data['id']);
+	    if(isset($data['id']))
+	    {
+		    $model = $this->model->find($data['id']);
 
-        $model->fill($data);
-
-        $this->syncRelation($model, $data, 'galleries');
-
-        if ($model->save()) {
-            return true;
-        }
-
-        return false;
+	        $model->fill($data);
+	
+	        $this->syncRelation($model, $data, 'galleries');
+	
+	        if ($model->save()) {
+	            return true;
+	        }
+	
+	        return false;
+	    }
+       
 
     }
 
@@ -377,13 +382,41 @@ abstract class RepositoriesAbstract implements RepositoryInterface
      */
     public function getPagesForSelect()
     {
-        $pages = App::make('TypiCMS\Modules\Pages\Repositories\PageInterface')
-            ->getAll([], true)
-            ->nest()
-            ->flatten();
-        $pages = array_merge(['' => '0'], $pages);
-        $pages = array_flip($pages);
-        return $pages;
+        $pages = Page::select('pages.id', 'title', 'locale', 'parent_id')
+            ->join('page_translations', 'pages.id', '=', 'page_translations.page_id')
+            ->where('locale', Config::get('typicms.adminLocale'))
+            ->order()
+            ->get();
+
+        $pagesArray = TypiCMS::arrayIndent($pages);
+
+        $pagesArray = array_merge(['' => '0'], $pagesArray);
+        $pagesArray = array_flip($pagesArray);
+
+        return $pagesArray;
+    }
+    
+    
+    /**
+     * Get all translated categories for a select/options
+     *
+     * @return array
+     */
+    public function getCategoriesForSelect()
+    {
+        $categories = Category::select('categories.id', 'title', 'locale', 'parent_id')
+            ->join('category_translations', 'categories.id', '=', 'category_translations.category_id')
+            ->where('locale', Config::get('typicms.adminLocale'))
+            ->order()
+            ->get();
+
+        $categoriesArray = TypiCMS::arrayIndent($categories);
+
+        $categoriesArray = array_merge(['Radice' => ''], $categoriesArray);
+        $categoriesArray = array_flip($categoriesArray);
+        
+		
+        return $categoriesArray;
     }
 
     /**

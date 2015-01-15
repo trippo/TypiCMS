@@ -40,8 +40,8 @@ class ModuleProvider extends ServiceProvider
         Config::addNamespace('categories', __DIR__ . '/../config');
 
         // Observers
-        CategoryTranslation::observe(new SlugObserver);
         Category::observe(new FileObserver);
+        CategoryTranslation::observe(new SlugObserver);
     }
 
     public function register()

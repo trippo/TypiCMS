@@ -25,6 +25,7 @@
 
 
             $scope.TypiCMS = TypiCMS;
+            
 
             // if we query files from a gallery, we need the gallery_id value :
             if (moduleName === 'galleries' && url.split('/')[5]) {
@@ -55,7 +56,7 @@
                 model.status = status;
                 $api.update({'id': model.id}, model).$promise.then(
                     function () {
-                        alertify.success('Item is ' + statuses[status] + '.');
+                        alertify.success('L\'elemento ora è ' + statuses[status] + '.');
                     },
                     function (reason) {
                         alertify.error('Error ' + reason.status + ' ' + reason.statusText);

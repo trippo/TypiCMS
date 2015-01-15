@@ -22,7 +22,7 @@
     </div>
     <div class="col-sm-3 form-group @if($errors->has('start_time'))has-error @endif">
         {{ Form::label('start_time', trans('validation.attributes.start_time'), array('class' => 'control-label')) }}
-        {{ Form::text('start_time', $model->present()->startTime, array('class' => 'form-control', 'placeholder' => trans('validation.attributes.HH:MM'))) }}
+        {{ Form::input('time','start_time', $model->present()->startTime, array('class' => 'timepicker form-control', 'placeholder' => trans('validation.attributes.HH:MM'))) }}
         {{ $errors->first('start_time', '<p class="help-block">:message</p>') }}
     </div>
 </div>
@@ -35,14 +35,14 @@
     </div>
     <div class="col-sm-3 form-group @if($errors->has('end_time'))has-error @endif">
         {{ Form::label('end_time', trans('validation.attributes.end_time'), array('class' => 'control-label')) }}
-        {{ Form::text('end_time', $model->present()->endTime, array('class' => 'form-control', 'placeholder' => trans('validation.attributes.HH:MM'))) }}
+        {{ Form::input('time','end_time', $model->present()->endTime, array('class' => 'timepicker form-control', 'placeholder' => trans('validation.attributes.HH:MM'))) }}
         {{ $errors->first('end_time', '<p class="help-block">:message</p>') }}
     </div>
 </div>
 
 @include('admin._tabs-lang')
 
-<div class="tab-content">
+<div class="tab-content tab-lang">
 
     @foreach ($locales as $lang)
 

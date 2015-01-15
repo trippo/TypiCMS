@@ -92,7 +92,7 @@ class File extends Base
      */
     public function getThumbAttribute()
     {
-        return $this->present()->thumbSrc(null, 22, [], 'filename');
+        return $this->present()->thumbSrc(null, 40, [], 'filename');
     }
 
     /**

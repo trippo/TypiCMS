@@ -36,7 +36,7 @@
 
         @include('admin._tabs-lang-form', ['target' => 'content'])
 
-        <div class="tab-content">
+        <div class="tab-content  tab-lang">
 
         @foreach ($locales as $lang)
 
@@ -95,7 +95,7 @@
 
         @include('admin._tabs-lang-form', ['target' => 'meta'])
 
-        <div class="tab-content">
+        <div class="tab-content tab-lang">
 
         {{-- Headers --}}
         @foreach ($locales as $lang)

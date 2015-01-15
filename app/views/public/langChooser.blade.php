@@ -20,7 +20,7 @@
 
                 @foreach ($locales as $locale)
 
-                <a href="/{{ $locale }}" class="btn btn-default btn-lg">{{ trans('db.languages.'.$locale) }}</a>
+                <a href="/{{ $locale }}" class="btn btn-default btn-lg"><img src="/img/languages/{{$locale}}.png" width="40" alt="{{ trans('db.languages.'.$locale) }}" /> {{ trans('db.languages.'.$locale) }}</a>
 
                 @endforeach
 

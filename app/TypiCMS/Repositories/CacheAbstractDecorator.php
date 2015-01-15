@@ -352,6 +352,16 @@ abstract class CacheAbstractDecorator implements RepositoryInterface
     }
 
     /**
+     * Get all translated pages for a select/options
+     *
+     * @return array
+     */
+    public function getCategoriesForSelect()
+    {
+        return $this->repo->getCategoriesForSelect();
+    }
+
+    /**
      * Get all modules for a select/options
      *
      * @return array

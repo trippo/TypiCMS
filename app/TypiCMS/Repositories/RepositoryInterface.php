@@ -166,6 +166,13 @@ interface RepositoryInterface
      * @return array
      */
     public function getPagesForSelect();
+    
+    /**
+     * Get all categories pages for a select/options
+     *
+     * @return array
+     */
+    public function getCategoriesForSelect();
 
     /**
      * Get all modules for a select/options
