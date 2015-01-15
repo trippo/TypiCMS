@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 use Input;
 use stdClass;
 use Str;
+use TypiCMS;
 use TypiCMS\Modules\Pages\Models\Page;
 use TypiCMS\Modules\Categories\Models\Category;
 use TypiCMS\NestedCollection;
@@ -412,7 +413,7 @@ abstract class RepositoriesAbstract implements RepositoryInterface
 
         $categoriesArray = TypiCMS::arrayIndent($categories);
 
-        $categoriesArray = array_merge(['Radice' => ''], $categoriesArray);
+        $categoriesArray = array_merge(['NO' => ''], $categoriesArray);
         $categoriesArray = array_flip($categoriesArray);
         
 		
