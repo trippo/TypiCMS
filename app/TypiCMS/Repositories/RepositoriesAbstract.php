@@ -398,6 +398,27 @@ abstract class RepositoriesAbstract implements RepositoryInterface
     }
     
     
+    private function recoursiveCategoriesFetch($parent_id=null)
+    {
+		$categories_list=array();
+	    
+	    $categories= Category::select('categories.id', 'title', 'locale', 'parent_id')
+            ->join('category_translations', 'categories.id', '=', 'category_translations.category_id')
+            ->where('locale', Config::get('typicms.adminLocale'))
+            ->where('parent_id',$parent_id)
+            ->get();
+        if(!empty($categories)){
+	        foreach($categories as $main_category)
+	        {
+		        $categories_list[]=$main_category;
+		        
+		        $categories_list=array_merge($categories_list,$this->recoursiveCategoriesFetch($main_category->id));
+		        
+	        }
+        }
+        return $categories_list;
+    }
+    
     /**
      * Get all translated categories for a select/options
      *
@@ -405,11 +426,7 @@ abstract class RepositoriesAbstract implements RepositoryInterface
      */
     public function getCategoriesForSelect()
     {
-        $categories = Category::select('categories.id', 'title', 'locale', 'parent_id')
-            ->join('category_translations', 'categories.id', '=', 'category_translations.category_id')
-            ->where('locale', Config::get('typicms.adminLocale'))
-            ->order()
-            ->get();
+        $categories = $this->recoursiveCategoriesFetch(null);
 
         $categoriesArray = TypiCMS::arrayIndent($categories);
 
@@ -419,6 +436,22 @@ abstract class RepositoriesAbstract implements RepositoryInterface
 		
         return $categoriesArray;
     }
+    
+    
+    /**
+     * Get all translated categories for a select/options
+     *
+     * @return array
+     */
+    public function getCategoriesForList()
+    {
+        $categories = $this->recoursiveCategoriesFetch(null);
+
+        $categoriesArray = TypiCMS::arrayIndentForList($categories);        
+		
+        return $categoriesArray;
+    }
+    
 
     /**
      * Get all modules for a select/options
