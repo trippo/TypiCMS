@@ -213,7 +213,7 @@ class TypiCMS
 		        $indent .= '••';
 	        }
             
-            $array[$k]->title=$indent." ".$item->title;
+            $array[$k]->identation=$indent;
         }
         return $array;
     }

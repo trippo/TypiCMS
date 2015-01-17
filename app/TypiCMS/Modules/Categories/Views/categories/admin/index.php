@@ -28,7 +28,7 @@
                     <td>
                         <input class="form-control input-sm" min="1" type="number" value="{{ model.position }}" name="position" ng-model="model.position" ng-change="update(model)">
                     </td>
-                    <td>{{ model.title }}</td>
+                    <td>{{ model.identation }} {{ model.title }}</td>
                 </tr>
             </tbody>
         </table>
