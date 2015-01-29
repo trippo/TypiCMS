@@ -2,7 +2,7 @@
             @if($model->$field)
             <div>
                 {{ $model->present()->thumb(150, 150, ['resize'], $field) }}
-                <small class="text-danger delete-attachment label label-danger" data-key="{{ $field }}">X</small>
+                <small class="text-danger delete-attachment label label-danger" data-table="{{ $model->getTable() }}" data-id="{{ $model->id }}" data-field="{{ $field }}">X</small>
             </div>
             @endif
             <div class="media-body">

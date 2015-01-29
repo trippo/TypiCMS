@@ -13,7 +13,9 @@ class ApiController extends BaseApiController
         parent::__construct($repository);
     }
     
-    
+    private function recursive_list(){
+	    
+    }
     /**
      * Get models
      * 
@@ -22,15 +24,7 @@ class ApiController extends BaseApiController
     public function index()
     {
 	    $models=$this->repository->getCategoriesForList();
-        //$models = $this->repository->getAll([], true);
-        /*
-foreach($models as $model)
-        {
-	        
-		    echo "<br/>".$model->title;
-		    
-	    }
-*/
+	    
         return Response::json($models, 200);
     }
 }

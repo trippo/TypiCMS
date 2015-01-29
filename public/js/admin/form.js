@@ -12,7 +12,7 @@ function initTinymce(selector) {
         relative_urls: false,
         skin_url: '/components/tinymce/skins/typicms',
         file_browser_callback: function(field_name, url, type, win) {
-        	// Help : http://www.tinymce.com/forum/viewtopic.php?id=30861&p=2
+            // Help : http://www.tinymce.com/forum/viewtopic.php?id=30861&p=2
             tinymce.activeEditor.windowManager.open({
                 title: 'Choose image',
                 url: '/admin/files?type=i&view=filepicker',
@@ -20,15 +20,17 @@ function initTinymce(selector) {
                 height: 550
             }, {
                 oninsert: function(url) {
-                	fieldElm = win.document.getElementById(field_name);
+                    fieldElm = win.document.getElementById(field_name);
                     fieldElm.value = url;
-                    if ("createEvent" in document) {
-                        var evt = document.createEvent("HTMLEvents");
-                        evt.initEvent("change", false, true);
-                        fieldElm.dispatchEvent(evt);
-                    } else {
-                        fieldElm.fireEvent("onchange");
-                    }
+                    // Bellow code doesn't work anymore with TinyMCE 4.1.7
+                    // so width and height fields are no more automatically set
+                    // if ("createEvent" in document) {
+                    //     var evt = document.createEvent("HTMLEvents");
+                    //     evt.initEvent("change", false, true);
+                    //     fieldElm.dispatchEvent(evt);
+                    // } else {
+                    //     fieldElm.fireEvent("onchange");
+                    // }
                 }
             });
         },
@@ -72,28 +74,30 @@ function initTinymce(selector) {
          */
         $('.delete-attachment').click(function(){
 
-            var urlForDeleteImg = document.URL.split('?')[0],
-                key = $(this).data('key'),
-                data = {};
+            var field  = $(this).data('field'),
+                id     = $(this).data('id'),
+                table  = $(this).data('table'),
+                data   = {},
+                $this  = $(this),
+                url    = '/api/v1/' + table + '/' + id;
 
-            if (! confirm('Cancel ' + key + '?')) {
+            if (! confirm('Cancella ' + field + '?')) {
                 return false;
             }
 
-            urlForDeleteImg = urlForDeleteImg.replace(/\/edit$/, '');
-            data['id'] = urlForDeleteImg.split('/').pop();
-            data[key] = 'delete';
+            data['id'] = id;
+            data[field] = 'delete';
 
             $.ajax({
                 type: 'PUT',
-                url: urlForDeleteImg,
+                url: url,
                 data: data
             }).done(function() {
-                location.reload();
+                $this.parent().remove();
             }).fail(function () {
-                location.reload();
-//                alertify.error(translate('An error occurred while deleting attachment.'));
+                alertify.error('An error occurred while deleting attachment.');
             });
+
             return false;
         });
 
@@ -160,10 +164,10 @@ function initTinymce(selector) {
          */
         if ($('.datepicker').length) {
             $('.datepicker').pickadate({
+                // editable: true,
                 formatSubmit: 'yyyy-mm-dd',
                 format: 'dd/mm/yyyy',
                 hiddenName: true,
-                editable: true,
             });
         }
 

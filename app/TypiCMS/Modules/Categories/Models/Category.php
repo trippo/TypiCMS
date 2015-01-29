@@ -5,6 +5,7 @@ use App;
 use Route;
 use Dimsav\Translatable\Translatable;
 use TypiCMS\Models\Base;
+use TypiCMS\NestableCollection;
 use TypiCMS\Presenters\PresentableTrait;
 use TypiCMS\Traits\Historable;
 
@@ -96,4 +97,16 @@ class Category extends Base
     {
         return $this->hasMany('TypiCMS\Modules\Projects\Models\Project')->order();
     }
+
+
+    /**
+     * Pages are nestable
+     *
+     * @return NestableCollection object
+     */
+    public function newCollection(array $models = array())
+    {
+        return new NestableCollection($models, 'parent_id');
+    }
+    
 }

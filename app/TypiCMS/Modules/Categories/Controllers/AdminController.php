@@ -44,7 +44,7 @@ class AdminController extends AdminSimpleController
     {
 	
 		$input = Input::all();
-		if($input['parent_id']=='')
+		if($input['parent_id']==0)
 		{
 			$input['parent_id']=null;
 		}
@@ -70,7 +70,7 @@ class AdminController extends AdminSimpleController
     public function update(Model $model)
     {
 		$input = Input::all();
-		if($input['parent_id']=='')
+		if($input['parent_id']==0)
 		{
 			$input['parent_id']=null;
 		}

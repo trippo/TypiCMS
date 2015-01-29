@@ -383,41 +383,15 @@ abstract class RepositoriesAbstract implements RepositoryInterface
      */
     public function getPagesForSelect()
     {
-        $pages = Page::select('pages.id', 'title', 'locale', 'parent_id')
-            ->join('page_translations', 'pages.id', '=', 'page_translations.page_id')
-            ->where('locale', Config::get('typicms.adminLocale'))
-            ->order()
-            ->get();
-
-        $pagesArray = TypiCMS::arrayIndent($pages);
-
-        $pagesArray = array_merge(['' => '0'], $pagesArray);
-        $pagesArray = array_flip($pagesArray);
-
-        return $pagesArray;
+        $pages = App::make('TypiCMS\Modules\Pages\Repositories\PageInterface')
+             ->getAll([], true)
+             ->nest()
+             ->listsFlattened();
+         $pages = array_merge(['' => '0'], $pages);
+         $pages = array_flip($pages);
+         return $pages;
     }
     
-    
-    private function recoursiveCategoriesFetch($parent_id=null)
-    {
-		$categories_list=array();
-	    
-	    $categories= Category::select('categories.id', 'title', 'locale', 'parent_id')
-            ->join('category_translations', 'categories.id', '=', 'category_translations.category_id')
-            ->where('locale', Config::get('typicms.adminLocale'))
-            ->where('parent_id',$parent_id)
-            ->get();
-        if(!empty($categories)){
-	        foreach($categories as $main_category)
-	        {
-		        $categories_list[]=$main_category;
-		        
-		        $categories_list=array_merge($categories_list,$this->recoursiveCategoriesFetch($main_category->id));
-		        
-	        }
-        }
-        return $categories_list;
-    }
     
     /**
      * Get all translated categories for a select/options
@@ -426,15 +400,14 @@ abstract class RepositoriesAbstract implements RepositoryInterface
      */
     public function getCategoriesForSelect()
     {
-        $categories = $this->recoursiveCategoriesFetch(null);
 
-        $categoriesArray = TypiCMS::arrayIndent($categories);
-
-        $categoriesArray = array_merge(['NO' => ''], $categoriesArray);
-        $categoriesArray = array_flip($categoriesArray);
-        
-		
-        return $categoriesArray;
+        $categories = App::make('TypiCMS\Modules\Categories\Repositories\CategoryInterface')
+            ->getAll([], true)
+            ->nest()
+            ->listsFlattened();
+        $categories = array_merge(['' => '0'], $categories);
+        $categories = array_flip($categories);
+        return $categories;
     }
     
     
@@ -445,11 +418,11 @@ abstract class RepositoriesAbstract implements RepositoryInterface
      */
     public function getCategoriesForList()
     {
-        $categories = $this->recoursiveCategoriesFetch(null);
-
-        $categoriesArray = TypiCMS::arrayIndentForList($categories);        
-		
-        return $categoriesArray;
+        $categories = App::make('TypiCMS\Modules\Categories\Repositories\CategoryInterface')
+            ->getAll([], true)
+            ->nest();
+        
+        return $categories;
     }
     
 
@@ -525,7 +498,7 @@ abstract class RepositoriesAbstract implements RepositoryInterface
         }
 
         if (! isset($data[$table])) {
-            $data[$table] = [];
+            return false;
         }
 
         // add related items

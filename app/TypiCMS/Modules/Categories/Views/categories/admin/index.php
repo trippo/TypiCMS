@@ -7,32 +7,19 @@
 
     <div class="btn-toolbar" role="toolbar" ng-include="'/views/partials/btnLocales.html'"></div>
 
-    <div class="table-responsive">
+    <ul class="nested">
+	    <li ng-repeat="model in displayedModels" ng-include="'nested_model_renderer'"></li>
+	</ul>
 
-        <table st-table="displayedModels" st-safe-src="models" st-order st-filter class="table table-condensed table-main">
-            <thead>
-                <tr>
-                    <th class="delete"></th>
-                    <th class="edit"></th>
-                    <th st-sort="status" class="status st-sort" translate>Status</th>
-                    <th st-sort="position" st-sort-default class="position st-sort">Position</th>
-                    <th st-sort="title" class="title st-sort" translate>Title</th>
-                </tr>
-            </thead>
-
-            <tbody>
-                <tr ng-repeat="model in displayedModels">
-                    <td><typi-btn-delete ng-click="delete(model)"></typi-btn-delete></td>
-                    <td typi-btn-edit></td>
-                    <td typi-btn-status></td>
-                    <td>
-                        <input class="form-control input-sm" min="1" type="number" value="{{ model.position }}" name="position" ng-model="model.position" ng-change="update(model)">
-                    </td>
-                    <td>{{ model.identation }} {{ model.title }}</td>
-                </tr>
-            </tbody>
-        </table>
-
+    <script type="text/ng-template"  id="nested_model_renderer">
+    <div><typi-btn-delete ng-click="delete(model)"></typi-btn-delete>
+    <span typi-btn-edit></span> <span typi-btn-status></span>
+    <input class="form-control inline-sm input-sm" min="1" type="number" value="{{ model.position }}" name="position" ng-model="model.position" ng-change="update(model)">
+     {{model.title}} 
     </div>
+    <ul>
+        <li ng-repeat="model in model.items" ng-include="'nested_model_renderer'"></li>
+    </ul>
+</script>
 
 </div>
