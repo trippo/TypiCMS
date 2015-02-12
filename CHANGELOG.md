@@ -1,6 +1,30 @@
 # Changelog
 All notable changes to TypiCMS will be documented in this file.
 
+## 1.7.17 - 2014-02-10
+
+### Fixed
+- Tags on create project
+
+## 1.7.15 - 2014-01-27
+
+### Fixed
+- Problem with .gitignore for assets.
+- Problem on delete attachment.
+- Problem of disapearing galleries when setting item on/offline.
+
+## 1.7.12 - 2014-01-22
+
+### Added
+- In production, errors 500 return a custom view.
+- package.json file updated.
+- bower.json file updated.
+
+## 1.7.11 - 2014-01-16
+
+### Fixed
+- Bug on getting pages array in menulink form.
+
 ## 1.7.9 - 2014-01-11
 
 ### Added
