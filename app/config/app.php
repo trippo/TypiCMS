@@ -143,19 +143,37 @@ return array(
 		'Barryvdh\Debugbar\ServiceProvider',
 		'BigName\BackupManager\Integrations\Laravel\BackupManagerServiceProvider',
 		'Bkwld\Croppa\ServiceProvider',
+<<<<<<< HEAD
 		'Cartalyst\Sentry\SentryServiceProvider',
+=======
+		'Thomaswelton\LaravelGravatar\LaravelGravatarServiceProvider',
+		'DaveJamesMiller\Breadcrumbs\ServiceProvider',
+		'Msurguy\Honeypot\HoneypotServiceProvider',
+>>>>>>> FETCH_HEAD
 		'Cviebrock\ImageValidator\ImageValidatorServiceProvider',
 		'DaveJamesMiller\Breadcrumbs\ServiceProvider',
 		'Jenssegers\Rollbar\RollbarServiceProvider',
 		'Krucas\Notification\NotificationServiceProvider',
 		'Laracasts\Utilities\UtilitiesServiceProvider',
+<<<<<<< HEAD
 		'Msurguy\Honeypot\HoneypotServiceProvider',
 		'Roumen\Sitemap\SitemapServiceProvider',
 		'Thomaswelton\LaravelGravatar\LaravelGravatarServiceProvider',
+=======
+		'BigName\BackupManager\Integrations\Laravel\BackupManagerServiceProvider',
+>>>>>>> FETCH_HEAD
 
-		'TypiCMS\Providers\StartProvider',
-		'TypiCMS\Providers\UploadServiceProvider',
-		'TypiCMS\Providers\TypiCMSServiceProvider',
+		'TypiCMS\Modules\News\Providers\ModuleProvider',
+		'TypiCMS\Modules\Places\Providers\ModuleProvider',
+		'TypiCMS\Modules\Events\Providers\ModuleProvider',
+		'TypiCMS\Modules\Projects\Providers\ModuleProvider',
+		'TypiCMS\Modules\Categories\Providers\ModuleProvider',
+		'TypiCMS\Modules\Tags\Providers\ModuleProvider',
+		'TypiCMS\Modules\Partners\Providers\ModuleProvider',
+		'TypiCMS\Modules\Contacts\Providers\ModuleProvider',
+
+		'TypiCMS\Providers\CoreServiceProvider',
+		'TypiCMS\TranslatableBootForms\TranslatableBootFormsServiceProvider',
 
 	),
 
@@ -228,9 +246,14 @@ return array(
 		'Croppa'          => 'Bkwld\Croppa\Facade',
 		'Debugbar'        => 'Barryvdh\Debugbar\Facade',
 		'Gravatar'        => 'Thomaswelton\LaravelGravatar\Facades\Gravatar',
+<<<<<<< HEAD
 		'Notification'    => 'Krucas\Notification\Facades\Notification',
 		'Sentry'          => 'Cartalyst\Sentry\Facades\Laravel\Sentry',
 		'Translatable'    => 'Dimsav\Translatable\Translatable',
+=======
+		'Breadcrumbs'     => 'DaveJamesMiller\Breadcrumbs\Facade',
+		'BootForm'        => 'AdamWathan\BootForms\Facades\BootForm',
+>>>>>>> FETCH_HEAD
 
 		'FileUpload'      => 'TypiCMS\Facades\FileUpload',
 		'TypiCMS'         => 'TypiCMS\Facades\TypiCMS',

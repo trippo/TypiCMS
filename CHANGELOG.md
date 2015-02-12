@@ -130,10 +130,14 @@ All notable changes to TypiCMS will be documented in this file.
 - Admin sidebar items managed by each module.
 - Better files upload system, with angular js.
 
+### Added
+- adamwathan/bootforms package
+
 ## 1.5.1 - 2014-10-03
 
 ### Added
 - Attachments can now be deleted
+>>>>>>> master
 
 ## 1.5.0 - 2014-11-29
 

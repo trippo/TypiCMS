@@ -57,7 +57,7 @@ App::error(function(Exception $exception, $code)
 	{
 		case 403:
 			return Response::view(
-				'errors.403', [
+				'core::errors.403', [
 					'title' => 'Erreur 403 – ' . Config::get('typicms.' . App::getLocale() . '.websiteTitle'),
 					'lang' => App::getLocale(),
 					'bodyClass' => 'error-403'
@@ -66,13 +66,14 @@ App::error(function(Exception $exception, $code)
 
 		case 404:
 			return Response::view(
-				'errors.404', [
+				'core::errors.404', [
 					'title' => 'Erreur 404 – ' . Config::get('typicms.' . App::getLocale() . '.websiteTitle'),
 					'lang' => App::getLocale(),
 					'bodyClass' => 'error-404'
 				], $code
 			);
 	}
+<<<<<<< HEAD
 	if (! App::isLocal()) {
 		return Response::view(
 			'errors.500', [
@@ -82,6 +83,15 @@ App::error(function(Exception $exception, $code)
 			], 500
 		);
 	}
+=======
+	// return Response::view(
+	// 	'core::errors.500', [
+	// 		'title' => 'Erreur 500 – ' . Config::get('typicms.' . App::getLocale() . '.websiteTitle'), 
+	// 		'lang' => App::getLocale(),
+	// 		'bodyClass' => 'error-500'
+	// 	], 500
+	// );
+>>>>>>> FETCH_HEAD
 });
 
 /*
@@ -122,11 +132,3 @@ require app_path().'/filters.php';
 if (extension_loaded('newrelic')) {
 	newrelic_set_appname('');
 }
-
-/*
-|--------------------------------------------------------------------------
-| HTML macros.
-|--------------------------------------------------------------------------|
-*/
-
-require app_path().'/TypiCMS/Macros.php';
