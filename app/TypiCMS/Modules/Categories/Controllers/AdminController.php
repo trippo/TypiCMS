@@ -27,10 +27,8 @@ class AdminController extends AdminSimpleController
 	public function create()
     {
         $model = $this->repository->getModel();
-        $selectCategories = $this->repository->getCategoriesForSelect();
 		
         $this->layout->content = View::make('admin.create')
-            ->with('selectCategories', $selectCategories)
             ->withModel($model);
     }
     
@@ -95,9 +93,7 @@ class AdminController extends AdminSimpleController
      */
     public function edit(Model $model)
     {
-	    $selectCategories = $this->repository->getCategoriesForSelect();
         $this->layout->content = View::make('admin.edit')
-            ->with('selectCategories', $selectCategories)
             ->withModel($model);
     }
 }

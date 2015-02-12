@@ -12,14 +12,14 @@
 	</ul>
 
     <script type="text/ng-template"  id="nested_model_renderer">
-    <div><typi-btn-delete ng-click="delete(model)"></typi-btn-delete>
-    <span typi-btn-edit></span> <span typi-btn-status></span>
-    <input class="form-control inline-sm input-sm" min="1" type="number" value="{{ model.position }}" name="position" ng-model="model.position" ng-change="update(model)">
-     {{model.title}} 
-    </div>
-    <ul>
-        <li ng-repeat="model in model.items" ng-include="'nested_model_renderer'"></li>
-    </ul>
-</script>
+	    <div><typi-btn-delete ng-click="delete(model)"></typi-btn-delete>
+	    <span typi-btn-edit></span> <span typi-btn-status></span>
+	    <input class="form-control inline-sm input-sm" min="1" type="number" value="{{ model.position }}" name="position" ng-model="model.position" ng-change="update(model)">
+	     {{model.title}} 
+	    </div>
+	    <ul>
+	        <li ng-repeat="model in model.items" ng-include="'nested_model_renderer'"></li>
+	    </ul>
+	</script>
 
 </div>

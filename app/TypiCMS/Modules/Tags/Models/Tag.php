@@ -47,7 +47,7 @@ class Tag extends Base
      *
      * @return \Illuminate\Database\Eloquent\Relations\MorphedByMany
      */
-    public function prodicts()
+    public function products()
     {
         return $this->morphedByMany('TypiCMS\Modules\Products\Models\Product', 'taggable');
     }

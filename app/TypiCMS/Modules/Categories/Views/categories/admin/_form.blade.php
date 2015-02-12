@@ -17,7 +17,7 @@
 <div class="row">
     <div class="col-sm-4 form-group">
         {{ Form::label('parent_id', trans('categories::global.parent_category'), array('class' => 'control-label')) }}        
-        {{ Form::select('parent_id', $selectCategories, $model->parent_id, array('class' => 'form-control')) }}
+        {{ Form::select('parent_id', Categories::getCategoriesForSelect(), $model->parent_id, array('class' => 'form-control')) }}
         
     </div>
 </div>
