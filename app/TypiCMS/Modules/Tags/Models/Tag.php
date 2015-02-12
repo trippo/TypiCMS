@@ -41,4 +41,14 @@ class Tag extends Base
     {
         return $this->morphedByMany('TypiCMS\Modules\Projects\Models\Project', 'taggable');
     }
+
+    /**
+     * Define a many-to-many polymorphic relationship.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\MorphedByMany
+     */
+    public function prodicts()
+    {
+        return $this->morphedByMany('TypiCMS\Modules\Products\Models\Product', 'taggable');
+    }
 }

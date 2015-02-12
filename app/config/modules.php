@@ -18,6 +18,7 @@ return [
     'Partners',
     'Places',
     'Projects',
+    'Products',
     'Tags',
     'Translations',
     'Users',

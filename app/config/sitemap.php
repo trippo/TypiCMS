@@ -10,6 +10,7 @@ return [
         'Partners',
         'Places',
         'Projects',
+        'Products',
         'Events',
         'Galleries',
         'News' ,

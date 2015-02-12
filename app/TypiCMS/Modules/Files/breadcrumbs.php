@@ -8,7 +8,7 @@ Breadcrumbs::register('admin.files.index', function (\DaveJamesMiller\Breadcrumb
 });
 
 // Files linked to modules
-$modulesWithFiles = array('pages', 'events', 'news', 'projects');
+$modulesWithFiles = array('pages', 'events', 'news', 'projects', 'products');
 
 foreach ($modulesWithFiles as $module) {
 

@@ -14,29 +14,27 @@
 
 @include('admin._image-fieldset', ['field' => 'image'])
 
-@include('admin._tabs-lang-form', ['target' => 'content'])
-
-<div class="tab-content tab-lang">
-
-<div class="checkbox">
-    <label>
-        {{ Form::checkbox('homepage', 1, $model->homepage) }} @lang('validation.attributes.homepage')
-    </label>
-</div>
-
 <div class="row">
-    <div class="col-sm-2 form-group @if($errors->has('position'))has-error @endif">
-        {{ Form::label('position', trans('validation.attributes.position')) }}
-        {{ Form::text('position', null, array('class' => 'form-control')) }}
-        @if($errors->has('position'))
-        <span class="help-block">{{ $errors->first('position') }}</span>
-        @endif
+    <div class="col-sm-4 form-group @if($errors->has('category_id'))has-error @endif">
+        {{ Form::label('category_id', trans('validation.attributes.category_id'), array('class' => 'control-label')) }}
+        {{ Form::select('category_id', Categories::getAllForSelect(), null, array('class' => 'form-control')) }}
+        {{ $errors->first('category_id', '<p class="help-block">:message</p>') }}
     </div>
 </div>
 
-@foreach ($locales as $lang)
+<div class="form-group">
+    {{ Form::label('tags', trans('validation.attributes.tags'), array('class' => 'control-label')) }}
+    {{ Form::text('tags', $tags, array('id' => 'tags', 'class' => 'form-control')) }}
+</div>
 
-    <div class="tab-pane fade @if($locale == $lang)in active @endif" id="content-{{ $lang }}">
+@include('admin._tabs-lang')
+
+<div class="tab-content">
+
+    @foreach ($locales as $lang)
+
+    <div class="tab-pane fade @if ($locale == $lang)in active @endif" id="{{ $lang }}">
+
         <div class="row">
             <div class="col-md-6 form-group">
                 {{ Form::label($lang.'[title]', trans('validation.attributes.title')) }}
@@ -53,15 +51,15 @@
                 {{ $errors->first($lang.'.slug', '<p class="help-block">:message</p>') }}
             </div>
         </div>
+
         <div class="checkbox">
             <label>
                 {{ Form::checkbox($lang.'[status]', 1, $model->translate($lang)->status) }} @lang('validation.attributes.online')
             </label>
         </div>
-        <div class="form-group @if($errors->has($lang.'.website'))has-error @endif">
-            {{ Form::label($lang.'[website]', trans('validation.attributes.website'), array('class' => 'control-label')) }}
-            {{ Form::text($lang.'[website]', $model->translate($lang)->website, array('class' => 'form-control', 'placeholder' => 'http://')) }}
-            {{ $errors->first($lang.'.website', '<p class="help-block">:message</p>') }}
+        <div class="form-group">
+            {{ Form::label($lang.'[summary]', trans('validation.attributes.summary')) }}
+            {{ Form::textarea($lang.'[summary]', $model->translate($lang)->summary, array('class' => 'form-control', 'rows' => 4)) }}
         </div>
         <div class="form-group">
             {{ Form::label($lang.'[body]', trans('validation.attributes.body')) }}
@@ -69,6 +67,6 @@
         </div>
     </div>
 
-@endforeach
+    @endforeach
 
 </div>
