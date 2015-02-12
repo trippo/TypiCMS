@@ -276,6 +276,12 @@ msgid_plural "{{ models.length }} projects"
 msgstr[0] ""
 msgstr[1] ""
 
+#: /Users/samuel/Sites/typicms/app/TypiCMS/Modules/Products/Views/products/admin/index.php
+msgid "{{ models.length }} product"
+msgid_plural "{{ models.length }} products"
+msgstr[0] ""
+msgstr[1] ""
+
 #: /Users/samuel/Sites/typicms/app/TypiCMS/Modules/Tags/Views/tags/admin/index.php
 msgid "{{ models.length }} tag"
 msgid_plural "{{ models.length }} tags"

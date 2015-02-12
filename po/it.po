@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.7.1\n"
+"X-Generator: Poedit 1.7.4\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: /Users/samuel/Sites/typicms/app/TypiCMS/Modules/Users/Views/users/admin/index.php
@@ -284,6 +284,12 @@ msgid "{{ models.length }} project"
 msgid_plural "{{ models.length }} projects"
 msgstr[0] "{{ models.length }} progetto"
 msgstr[1] "{{ models.length }} progetti"
+
+#: /Users/samuel/Sites/typicms/app/TypiCMS/Modules/Products/Views/products/admin/index.php
+msgid "{{ models.length }} product"
+msgid_plural "{{ models.length }} products"
+msgstr[0] "{{ models.length }} prodotto"
+msgstr[1] "{{ models.length }} prodotti"
 
 #: /Users/samuel/Sites/typicms/app/TypiCMS/Modules/Tags/Views/tags/admin/index.php
 msgid "{{ models.length }} tag"
