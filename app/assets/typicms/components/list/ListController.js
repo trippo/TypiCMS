@@ -110,16 +110,11 @@
                     return false;
                 }
                 var index = $scope.models.indexOf(model);
-                $api.delete({'id': model.id},
-                    function () {
-                        if (index !== -1) {
-                            $scope.models.splice(index, 1);
-                        }
-                    },
-                    function (reason) {
-                        alertify.error(reason.data.message);
+                $api.delete({'id': model.id}, function () {
+                    if (index !== -1) {
+                        $scope.models.splice(index, 1);
                     }
-                );
+                });
             };
 
             /**
