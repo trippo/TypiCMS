@@ -199,7 +199,7 @@ msgstr "Tipo"
 
 #: /Users/samuel/Sites/typicms/app/TypiCMS/Modules/Tags/Views/tags/admin/index.php
 msgid "Uses"
-msgstr "Usi"
+msgstr "Utilizzi"
 
 #: /Users/samuel/Sites/typicms/app/TypiCMS/Modules/Partners/Views/partners/admin/index.php
 #: /Users/samuel/Sites/typicms/app/TypiCMS/Modules/Places/Views/places/admin/index.php

@@ -36,7 +36,6 @@
 					e.stopPropagation();
 					var string = $(this).closest('.form-group').prev().find('input').val(),
 						slugField = $(this).parent().parent().find('input');
-										alert(string);	
 
 					slug = methods.convertToSlug( string );
 					slugField.val(slug);

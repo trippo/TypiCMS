@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddProductsTable extends Migration {
+class CreateProductsTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -37,6 +37,8 @@ class AddProductsTable extends Migration {
 		Schema::create('product_translations', function(Blueprint $table)
 		{
 			$table->engine = 'InnoDB';
+			
+			$table->increments('id')->unsigned();
             $table->integer('product_id')->unsigned();
             $table->string('locale');
 
