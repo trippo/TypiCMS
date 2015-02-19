@@ -11,6 +11,8 @@ return array(
         'fr' => 'French',
         'nl' => 'Dutch',
         'en' => 'English',
+        'es' => 'Spanish',
+        'it' => 'Italian',
     ),
     'form' => array(
         'page content' => 'page content',
@@ -36,6 +38,9 @@ return array(
     'Sort' => 'Sort',
     'Edit' => 'Edit',
     'Not found' => 'Not found',
+    
+    'currency' => '€',
+    'weight_unit' => 'kg',
 
     'Yes' => 'Yes',
     'No' => 'No',

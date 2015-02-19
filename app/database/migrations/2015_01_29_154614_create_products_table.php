@@ -25,7 +25,7 @@ class AddProductsTable extends Migration {
 			$table->smallInteger('position')->unsigned()->default(0);
 			$table->text('image')->nullable();
 			$table->text('images')->nullable();
-			$table->text('related_products');
+			$table->text('related_products')->nullable();
 
 			$table->timestamps();
 			$table->foreign('partner_id')->references('id')->on('partners')->onDelete('set null');
@@ -42,15 +42,15 @@ class AddProductsTable extends Migration {
 
             $table->tinyInteger('status')->default(1);
 
-			$table->string('name');
+			$table->string('title');
 			$table->string('slug')->nullable()->unique();
-			$table->text('description')->nullable();
-			$table->string('excerpt')->nullable();
+			$table->text('body')->nullable();
+			$table->string('summary')->nullable();
 
-			$table->string('seo_title')->nullable();
-			$table->string('seo_keywords')->nullable();
-			$table->string('seo_description')->nullable();
-			$table->string('seo_meta')->nullable();
+			$table->string('meta_title')->nullable();
+			$table->string('meta_keywords')->nullable();
+			$table->string('meta_description')->nullable();
+			$table->string('others_meta')->nullable();
 
             $table->timestamps();
 

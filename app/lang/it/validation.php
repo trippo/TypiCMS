@@ -188,7 +188,15 @@ return array(
 
         // Projects
         'category_id' => 'Categoria',
-
+        
+		// Products		
+        'partner_id' => 'Marchio',
+        'sku' => 'Codice',
+        'price' => 'Prezzo',
+        'discount' => 'Prezzo Scontato',
+        'weight' => 'Peso',
+        
+		
         // Mots-clés
         'tags' => 'Tags',
         'tag' => 'Tag',

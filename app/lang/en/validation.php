@@ -180,6 +180,13 @@ return array(
 
         // Projects
         'category_id' => 'Category',
+        
+		// Products		
+        'partner_id' => 'Producer',
+        'sku' => 'Sku',
+        'price' => 'Price',
+        'discount' => 'Discounted Price',
+        'weight' => 'Weight',
 
         // Mots-clés
         'tags' => 'Tags',

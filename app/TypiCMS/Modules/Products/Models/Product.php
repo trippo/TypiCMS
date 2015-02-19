@@ -27,15 +27,15 @@ class Product extends Base
         'images',
         
         // Translatable columns
-        'name',
+        'title',
         'slug',
         'status',
-        'excerpt',
-        'description',
-        'seo_title',
-        'seo_keywords',
-        'seo_description',
-        'seo_meta',
+        'summary',
+        'body',
+        'meta_title',
+        'meta_keywords',
+        'meta_description',
+        'others_meta',
     );
 
     /**
@@ -44,15 +44,15 @@ class Product extends Base
      * @var array
      */
     public $translatedAttributes = array(
-        'name',
+        'title',
         'slug',
         'status',
-        'excerpt',
-        'description',
-        'seo_title',
-        'seo_keywords',
-        'seo_description',
-        'seo_meta',
+        'summary',
+        'body',
+        'meta_title',
+        'meta_keywords',
+        'meta_description',
+        'others_meta',
     );
 
     /**
@@ -64,7 +64,7 @@ class Product extends Base
         'image',
     );
 
-    protected $appends = ['status', 'name', 'thumb', 'category_name', 'partner_name'];
+    protected $appends = ['status', 'title', 'thumb', 'category_name', 'partner_name'];
 
     /**
      * Relation

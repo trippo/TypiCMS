@@ -38,6 +38,9 @@ return array(
     'Sort' => 'Ordina',
     'Edit' => 'Modifica',
     'Not found' => 'Non trovato',
+    
+    'currency' => '€',
+    'weight_unit' => 'kg',
 
     'Yes' => 'Si',
     'No' => 'No',

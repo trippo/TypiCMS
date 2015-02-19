@@ -12,7 +12,7 @@ class SidebarViewComposer
             'weight' => Config::get('products::admin.weight'),
             'request' => $view->prefix . '/products*',
             'route' => 'admin.products.index',
-            'icon-class' => 'icon fa fa-fw fa-barcode',
+            'icon-class' => 'icon fa fa-fw fa-archive',
             'title' => 'Products',
         ]);
     }
