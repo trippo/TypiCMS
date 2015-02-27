@@ -66,16 +66,6 @@ class Category extends Base
     {
         return $this->belongsTo('TypiCMS\Modules\Categories\Models\Category','parent_id')->whereNotNull('parent_id');
     }
-	
-    /**
-     * Columns that are file.
-     *
-     * @var array
-     */
-    public $attachments = array(
-        'image',
-    );
-
     /**
      * Get public uri
      *
