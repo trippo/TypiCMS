@@ -19,6 +19,7 @@ class Category extends Base
     protected $presenter = 'TypiCMS\Modules\Categories\Presenters\ModulePresenter';
 
     protected $fillable = array(
+        'image',
         'position',
         'parent_id',
         'image',
@@ -66,6 +67,15 @@ class Category extends Base
         return $this->belongsTo('TypiCMS\Modules\Categories\Models\Category','parent_id')->whereNotNull('parent_id');
     }
 	
+    /**
+     * Columns that are file.
+     *
+     * @var array
+     */
+    public $attachments = array(
+        'image',
+    );
+
     /**
      * Get public uri
      *

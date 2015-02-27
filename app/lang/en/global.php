@@ -54,6 +54,7 @@ return array(
     'view website' => 'view website',
 
     'Mandatory fields' => 'Mandatory fields',
+    'Please correct the following errors:' => 'Please correct the following errors:',
 
     // Tabs
     'Content' => 'Content',

@@ -43,6 +43,18 @@
                 @endif
             @show
 
+            @if ($errors->count())
+                <div class="alert alert-danger alert-dismissable">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <p>@lang('global.Please correct the following errors:')</p>
+                    <ul>
+                        @foreach ($errors->all() as $message)
+                            <li>{{ $message }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+
             @yield('main')
 
         </div>

@@ -54,6 +54,7 @@ return array(
     'view website' => 'visualizza sito',
 
     'Mandatory fields' => 'Campi obbligatori',
+    'Please correct the following errors:' => 'Correggi i seguenti errori:',
 
     // Tabs
     'Content' => 'Contenuto',
