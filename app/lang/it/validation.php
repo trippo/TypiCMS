@@ -160,6 +160,7 @@ return array(
         'rss_enabled' => 'Rss abilitati',
         'comments_enabled' => 'Commenti abilitati',
         'is_home' => 'E\' l\'homepage',
+        'redirect to first child' => 'Redirigi al primo figlio',
         'template' => 'Template',
         'css' => 'Css',
         'js' => 'Js',

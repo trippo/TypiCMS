@@ -405,7 +405,8 @@ abstract class RepositoriesAbstract implements RepositoryInterface
             ->getAll([], true)
             ->nest()
             ->listsFlattened();
-        $categories = array_merge(['' => '0'], $categories);
+
+        $categories = ['' => '0'] + $categories;
         $categories = array_flip($categories);
         return $categories;
     }

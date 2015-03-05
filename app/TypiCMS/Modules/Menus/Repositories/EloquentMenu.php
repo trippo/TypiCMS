@@ -93,7 +93,7 @@ class EloquentMenu extends RepositoriesAbstract implements MenuInterface
             if ($item->has_categories) {
                 $item->items = $this->prepare(Categories::getAllForMenu($item->uri));
             }
-            $item->uri = $this->setUri($item);
+            $item->href = $this->setHref($item);
             $item->class = $this->setClass($item);
         });
 
@@ -122,14 +122,14 @@ class EloquentMenu extends RepositoriesAbstract implements MenuInterface
     }
 
     /**
-     * 1. Uri = menulink->uri
-     * 2. if menulink has a page, take the uri of the page
-     * 3. if menulink has url field, take it
+     * 1. if menulink has a url, use it
+     * 2. if menulink has a page, use pages’s uri
+     * 3. or use menulink’s uri column
      *
      * @param Model   $menulink
      * @return string uri
      */
-    public function setUri($menulink)
+    public function setHref($menulink)
     {
         if ($menulink->url) {
             return $menulink->url;
@@ -173,10 +173,10 @@ class EloquentMenu extends RepositoriesAbstract implements MenuInterface
         // add active class if item uri equals current uri
         // or current uri contain item uri
         // item uri must be bigger than 3 to avoid homepage link always active ('/', '/lg')
-        if ($menulink->uri == $activeUri ||
+        if ($menulink->href == $activeUri ||
                 (
-                    strlen($menulink->uri) > 3 &&
-                    preg_match('@^'.$menulink->uri.'@', $activeUri)
+                    strlen($menulink->href) > 3 &&
+                    preg_match('@^'.$menulink->href.'@', $activeUri)
                 )
             ) {
             $classArray[] = 'active';
