@@ -18,6 +18,11 @@
             $scope.parentId = $scope.url.split('/')[5] || 0;
             if (moduleName === 'galleries' && lastSegment === 'edit') {
                 $scope.url = '/admin/files';
+                $scope.destModule='files';
+            }
+            if (moduleName === 'products' && lastSegment === 'edit') {
+                $scope.url = '/admin/photos';
+                $scope.destModule='/api/photos';
             }
             if (moduleName === 'menus' && lastSegment === 'edit') {
                 $scope.url = url.slice(0, url.lastIndexOf('/')) + '/menulinks';
@@ -30,6 +35,11 @@
             // if we query files from a gallery, we need the gallery_id value :
             if (moduleName === 'galleries' && url.split('/')[5]) {
                 $params.gallery_id = url.split('/')[5];
+            }
+
+            // if we query phots from a gallery, we need the gallery_id value :
+            if (moduleName === 'products' && url.split('/')[5]) {
+                $params.product_id = url.split('/')[5];
             }
 
             // if we query menulinks menu_id value :

@@ -64,7 +64,7 @@ class Product extends Base
         'image',
     );
 
-    protected $appends = ['status', 'title', 'thumb', 'category_name', 'partner_name'];
+    protected $appends = ['status', 'title', 'thumb', 'category_name', 'partner_name', 'photos_count'];
 
     /**
      * Relation
@@ -72,6 +72,17 @@ class Product extends Base
     public function category()
     {
         return $this->belongsTo('TypiCMS\Modules\Categories\Models\Category');
+    }
+    
+    
+    /**
+     * One product has many photos.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function photos()
+    {
+        return $this->hasMany('TypiCMS\Modules\Photos\Models\Photo')->order();
     }
 
 
@@ -108,5 +119,17 @@ class Product extends Base
             return $this->partner->title;
         }
         return null;
+    }
+    
+    
+
+    /**
+     * Get photos count
+     * 
+     * @return string title
+     */
+    public function getPhotosCountAttribute()
+    {
+        return $this->photos->count();
     }
 }

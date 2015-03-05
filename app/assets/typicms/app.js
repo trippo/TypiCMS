@@ -22,11 +22,12 @@
         var url = $location.absUrl().split('?')[0],
             moduleName = url.split('/')[4];
 
-/*
         if (moduleName === 'galleries' && url.split('/')[6] === 'edit') {
             moduleName = 'files';
         }
-*/
+        if (moduleName === 'products' && url.split('/')[6] === 'edit') {
+            moduleName = 'photos';
+        }
         if (moduleName === 'menus' && url.split('/')[6] === 'edit') {
             moduleName = 'menulinks';
         }

@@ -14,7 +14,8 @@ angular.module('typicms').directive('dropZone', function () {
         var dropZoneTemplate,
             acceptedFiles,
             parentId = scope.parentId,
-            locales = scope.TypiCMS.locales;
+            locales = scope.TypiCMS.locales,
+            moduleType = scope.moduleType;
 
         dropZoneTemplate = '<div class="thumbnail dz-preview dz-file-preview">\
                 <div class="dz-details">\
@@ -46,7 +47,7 @@ angular.module('typicms').directive('dropZone', function () {
         ];
 
         Dropzone.options.dropzone = {
-            url: '/api/files',
+            url: 'api/'+moduleType,
             paramName: 'filename',
             clickable: true,
             maxFilesize: 2, // MB
@@ -72,8 +73,12 @@ angular.module('typicms').directive('dropZone', function () {
                 });
 
                 this.on('sending', function (file, xhr, formData) {
-
-                    formData.append('gallery_id', parentId);
+					if(moduleType=='file'){
+						formData.append('gallery_id', parentId);
+					}else{
+						formData.append('product_id', parentId);	
+					}
+                    
                     for (var i = locales.length - 1; i >= 0; i--) {
                         formData.append(locales[i].short + '[description]', '');
                         formData.append(locales[i].short + '[alt_attribute]', '');

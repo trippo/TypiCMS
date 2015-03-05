@@ -18,6 +18,7 @@
                     <th st-sort="image" class="image st-sort" translate>Image</th>
                     <th st-sort="title" class="title st-sort" translate>Title</th>
                     <th st-sort="category_name" class="category st-sort" translate>Category</th>
+                    <th st-sort="photos_count" class="photos_count st-sort" translate>Photos</th>
                 </tr>
                 <tr>
                     <td colspan="4"></td>
@@ -38,11 +39,12 @@
                     <td typi-thumb-list-item></td>
                     <td>{{ model.title }}</td>
                     <td>{{ model.category_name }}</td>
+                    <td typi-btn-photos></td>
                 </tr>
             </tbody>
             <tfoot>
                 <tr>
-                    <td colspan="6" typi-pagination></td>
+                    <td colspan="7" typi-pagination></td>
                 </tr>
             </tfoot>
         </table>

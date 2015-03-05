@@ -136,6 +136,30 @@ abstract class Base extends Model
     }
 
     /**
+     * Attach photos to model
+     *
+     * @param  Builder $query
+     * @param  boolean $all : all models or online models
+     * @return Builder $query
+     */
+    public function scopePhotos(Builder $query, $all = false)
+    {
+        return $query->with(
+            array('photos' => function (Builder $query) use ($all) {
+                $query->with(array('translations' => function (Builder $query) use ($all) {
+                    $query->where('locale', App::getLocale());
+                    ! $all && $query->where('status', 1);
+                }));
+                $query->whereHas('translations', function (Builder $query) use ($all) {
+                    $query->where('locale', App::getLocale());
+                    ! $all && $query->where('status', 1);
+                });
+                $query->orderBy('position', 'asc');
+            })
+        );
+    }
+
+    /**
      * Get models that have online non empty translation
      *
      * @param  Builder $query

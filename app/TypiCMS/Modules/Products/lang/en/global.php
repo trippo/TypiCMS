@@ -5,4 +5,5 @@ return array(
     'New'  => 'New product',
     'Edit' => 'Edit product',
     'Back' => 'Back to products',
+    'Save your product, then add photos.' => 'Save your product, then add photos.',
 );

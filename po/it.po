@@ -29,6 +29,11 @@ msgstr "﻿Categoria"
 msgid "Click or drop files to upload."
 msgstr "﻿Fare clic o trascinare i file da caricare."
 
+#: /Users/samuel/Sites/typicms/app/TypiCMS/Modules/Photos/Views/photos/admin/index.php
+#: /Users/samuel/Sites/typicms/app/TypiCMS/Modules/Products/Views/products/admin/photos.php
+msgid "Click or drop photos to upload."
+msgstr "Clicca o trascina una foto per l'upload"
+
 #: /Users/samuel/Sites/typicms/app/TypiCMS/Modules/Blocks/Views/blocks/admin/index.php
 msgid "Content"
 msgstr "﻿Contenuto"
@@ -63,6 +68,10 @@ msgstr "Nome file"
 #: /Users/samuel/Sites/typicms/app/TypiCMS/Modules/Galleries/Views/galleries/admin/index.php
 msgid "Files"
 msgstr "Files"
+
+#: /Users/samuel/Sites/typicms/app/TypiCMS/Modules/Products/Views/products/admin/index.php
+msgid "Photos"
+msgstr "Foto"
 
 #: /Users/samuel/Sites/typicms/app/TypiCMS/Modules/Contacts/Views/contacts/admin/index.php
 #: /Users/samuel/Sites/typicms/app/TypiCMS/Modules/Users/Views/users/admin/index.php
@@ -242,6 +251,14 @@ msgid "{{ models.length }} file"
 msgid_plural "{{ models.length }} files"
 msgstr[0] "{{ models.length }} file"
 msgstr[1] "{{ models.length }} files"
+
+#: /Users/samuel/Sites/typicms/app/TypiCMS/Modules/Photos/Views/photos/admin/index.php
+#: /Users/samuel/Sites/typicms/app/TypiCMS/Modules/Photos/Views/photos/admin/thumbnails.php
+#: /Users/samuel/Sites/typicms/app/TypiCMS/Modules/Products/Views/products/admin/photos.php
+msgid "{{ models.length }} photo"
+msgid_plural "{{ models.length }} photos"
+msgstr[0] "{{ models.length }} foto"
+msgstr[1] "{{ models.length }} foto"
 
 #: /Users/samuel/Sites/typicms/app/TypiCMS/Modules/Galleries/Views/galleries/admin/index.php
 msgid "{{ models.length }} gallery"

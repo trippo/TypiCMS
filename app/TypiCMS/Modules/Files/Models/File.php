@@ -112,4 +112,18 @@ class File extends Base
     {
         return $this->description;
     }
+    
+    /**
+     * Get back office’s index of models url
+     * 
+     * @return string|void
+     */
+    public function returnUrl()
+    {
+        try {
+            return route('admin.galleries.edit',$this->gallery_id)."?tab=tab-files";
+        } catch (InvalidArgumentException $e) {
+            Log::error($e->getMessage());
+        }
+    }
 }

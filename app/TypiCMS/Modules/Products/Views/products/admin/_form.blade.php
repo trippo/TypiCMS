@@ -13,11 +13,11 @@
 {{ Form::hidden('id'); }}
 
 <ul class="nav nav-tabs">
-    <li class="active">
+    <li class="@if (input::get('tab') != 'tab-photos') active @endif">
         <a href="#tab-main" data-target="#tab-main" data-toggle="tab">@lang('global.Info')</a>
     </li>
-    <li>
-        <a href="#tab-files" data-target="#tab-images" data-toggle="tab">@lang('global.Images')</a>
+    <li class="@if (input::get('tab') == 'tab-photos') active @endif">
+        <a href="#tab-photos" data-target="#tab-photos" data-toggle="tab">@lang('global.Images')</a>
     </li>
     <li>
         <a href="#tab-meta" data-target="#tab-meta" data-toggle="tab">@lang('global.Meta')</a>
@@ -30,7 +30,7 @@
 <div class="tab-content">
 	
     {{-- Main tab --}}
-    <div class="tab-pane fade in active" id="tab-main">
+    <div class="tab-pane fade in @if (input::get('tab') != 'tab-photos')active @endif" id="tab-main">
 	
 		<div class="row">
 		    <div class="col-sm-4 form-group">
@@ -57,21 +57,21 @@
 		        {{ Form::label('price', trans('validation.attributes.price'), array('class' => 'control-label')) }}
 		        <div class="input-group">
 					<span class="input-group-addon">{{ trans('global.currency') }}</span>
-					{{ Form::number('price', $model->price, array('id' => 'price', 'class' => 'form-control')) }}
+					{{ Form::number('price', number_format($model->price,2), array('id' => 'price', 'class' => 'form-control')) }}
 		        </div>
 		    </div>
 		    <div class="col-sm-4 form-group">
 		        {{ Form::label('discount', trans('validation.attributes.discount'), array('class' => 'control-label')) }}
 		        <div class="input-group">
 					<span class="input-group-addon">{{ trans('global.currency') }}</span>
-					{{ Form::number('discount', $model->discount, array('id' => 'discount', 'class' => 'form-control')) }}
+					{{ Form::number('discount', number_format($model->discount,2), array('id' => 'discount', 'class' => 'form-control')) }}
 		        </div>
 		    </div>
 		    <div class="col-sm-4 form-group">
 		        {{ Form::label('weight', trans('validation.attributes.weight'), array('class' => 'control-label')) }}
 		        <div class="input-group">
 					<span class="input-group-addon">{{ trans('global.weight_unit') }}</span>
-					{{ Form::number('weight', $model->weight, array('id' => 'weight', 'class' => 'form-control')) }}
+					{{ Form::number('weight', number_format($model->weight,2), array('id' => 'weight', 'class' => 'form-control')) }}
 		        </div>
 		    </div>
 		</div>
@@ -126,8 +126,14 @@
 		</div>
     </div>
     
-    {{-- Galleries tab --}}
-    <div class="tab-pane fade in" id="tab-images">
+    {{-- Photos tab --}}
+    <div class="tab-pane fade in @if (input::get('tab') == 'tab-photos')active @endif" id="tab-photos">
+
+        @if ($model->id)
+            @include('products.admin.photos')
+        @else
+            <p class="alert alert-info">@lang('galleries::global.Save your product, then add photos.')</p>
+        @endif
 
     </div>
 

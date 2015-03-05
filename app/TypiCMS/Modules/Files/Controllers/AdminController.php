@@ -7,6 +7,8 @@ use Paginator;
 use TypiCMS\Controllers\AdminSimpleController;
 use TypiCMS\Modules\Files\Repositories\FileInterface;
 use TypiCMS\Modules\Files\Services\Form\FileForm;
+use Illuminate\Database\Eloquent\Model;
+use Redirect;
 use View;
 
 class AdminController extends AdminSimpleController
@@ -40,5 +42,25 @@ class AdminController extends AdminSimpleController
 
         $this->layout->content = View::make('files.admin.' . $view)
             ->withModels($models);
+    }
+    
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  Model    $model
+     * @return Redirect
+     */
+    public function update(Model $model)
+    {
+
+        if ($this->form->update(Input::all())) {
+            $redirectUrl = Input::get('exit') ? $model->returnUrl() : $model->editUrl() ;
+            return Redirect::to($redirectUrl);
+        }
+
+        return Redirect::to($model->editUrl())
+            ->withInput()
+            ->withErrors($this->form->errors());
+
     }
 }

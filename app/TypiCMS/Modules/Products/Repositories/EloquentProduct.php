@@ -4,6 +4,7 @@ namespace TypiCMS\Modules\Products\Repositories;
 use Illuminate\Database\Eloquent\Model;
 use TypiCMS\Repositories\RepositoriesAbstract;
 use TypiCMS\Modules\Tags\Repositories\TagInterface;
+use TypiCMS\Modules\Photos\Repositories\Photo;
 
 class EloquentProduct extends RepositoriesAbstract implements ProductInterface
 {
@@ -48,5 +49,25 @@ class EloquentProduct extends RepositoriesAbstract implements ProductInterface
         isset($data['tags']) && $this->syncTags($model, $data['tags']);
 
         return true;
+    }
+    
+    /**
+     * Delete model and attached photos
+     *
+     * @return boolean
+     */
+    public function delete($model)
+    {
+        if ($model->photos) {
+            $model->photos->each(function (Photo $photo) {
+                $photo->delete();
+            });
+        }
+        
+        if ($model->delete()) {
+            return true;
+        }
+
+        return false;
     }
 }
